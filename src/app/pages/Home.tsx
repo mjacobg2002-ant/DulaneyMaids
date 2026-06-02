@@ -543,8 +543,8 @@ export function Home() {
         </div>
       </section>
 
-      {/* ─── Testimonials ─────────────────────────────────────── */}
-      <section className="py-20 bg-[#F6F8FC]">
+      {/* ─── Testimonials (hidden) ────────────────────────────── */}
+      {false && <section className="py-20 bg-[#F6F8FC]">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <motion.div className="text-center mb-12" {...motionProps()}>
             <h2
@@ -581,17 +581,8 @@ export function Home() {
             ))}
           </motion.div>
 
-          <motion.div className="text-center mt-8" {...motionProps(0.1)}>
-            <Link
-              to="/reviews"
-              style={{ fontWeight: 600, color: '#3E6EDC' }}
-              className="text-sm hover:opacity-80 transition-opacity inline-flex items-center gap-1.5"
-            >
-              Read all reviews <ArrowRight size={14} />
-            </Link>
-          </motion.div>
         </div>
-      </section>
+      </section>}
 
       {/* ─── FAQ Preview ──────────────────────────────────────── */}
       <section className="py-20 bg-white">
