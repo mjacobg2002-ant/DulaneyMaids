@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import dulaneyLogo from '../../imports/From_selection_3.PNG';
+import dulaneyLogo from '../../imports/D93E96E1-9ED1-4E26-B622-7EEA532516B2.PNG';
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
