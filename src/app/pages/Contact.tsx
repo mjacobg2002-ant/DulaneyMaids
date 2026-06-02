@@ -8,6 +8,11 @@ interface FormData {
   email: string;
   phone: string;
   serviceType: string;
+  bedrooms: string;
+  bathrooms: string;
+  sqft: string;
+  focusAreas: string;
+  frequency: string;
   message: string;
 }
 
@@ -17,6 +22,11 @@ export function Contact() {
     email: '',
     phone: '',
     serviceType: '',
+    bedrooms: '',
+    bathrooms: '',
+    sqft: '',
+    focusAreas: '',
+    frequency: '',
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
@@ -42,7 +52,12 @@ export function Contact() {
           email: form.email,
           phone: form.phone || 'Not provided',
           service_type: form.serviceType,
-          message: form.message,
+          bedrooms: form.bedrooms,
+          bathrooms: form.bathrooms,
+          square_footage: form.sqft,
+          focus_areas: form.focusAreas,
+          frequency: form.frequency,
+          message: form.message || 'No additional message.',
         }),
       });
       if (res.ok) {
@@ -59,6 +74,8 @@ export function Contact() {
 
   const inputClass =
     'w-full bg-white border border-[#E5E7EB] rounded-xl px-4 py-3 text-sm text-[#111827] placeholder-[#9CA3AF] focus:outline-none focus:border-[#3E6EDC] focus:ring-2 focus:ring-[#3E6EDC]/10 transition-all';
+
+  const labelClass = 'block text-xs text-[#374151] mb-1.5';
 
   return (
     <div>
@@ -101,10 +118,7 @@ export function Contact() {
                   Contact Information
                 </h2>
                 <div className="flex flex-col gap-5">
-                  <a
-                    href="mailto:camerondavis@dulaneyco.net"
-                    className="flex items-start gap-4 group"
-                  >
+                  <a href="mailto:camerondavis@dulaneyco.net" className="flex items-start gap-4 group">
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
                       style={{ backgroundColor: '#EEF1F7', color: '#143177' }}
@@ -112,9 +126,7 @@ export function Contact() {
                       <Mail size={18} />
                     </div>
                     <div>
-                      <p className="text-xs text-[#6B7280] mb-0.5" style={{ fontWeight: 600 }}>
-                        EMAIL
-                      </p>
+                      <p className="text-xs text-[#6B7280] mb-0.5" style={{ fontWeight: 600 }}>EMAIL</p>
                       <p
                         className="text-sm text-[#143177] group-hover:text-[#3E6EDC] transition-colors"
                         style={{ fontWeight: 600 }}
@@ -132,9 +144,7 @@ export function Contact() {
                       <Phone size={18} />
                     </div>
                     <div>
-                      <p className="text-xs text-[#6B7280] mb-0.5" style={{ fontWeight: 600 }}>
-                        PHONE
-                      </p>
+                      <p className="text-xs text-[#6B7280] mb-0.5" style={{ fontWeight: 600 }}>PHONE</p>
                       <p className="text-sm text-[#374151]">Contact us by email to receive phone details</p>
                     </div>
                   </div>
@@ -147,9 +157,7 @@ export function Contact() {
                       <Clock size={18} />
                     </div>
                     <div>
-                      <p className="text-xs text-[#6B7280] mb-0.5" style={{ fontWeight: 600 }}>
-                        BUSINESS HOURS
-                      </p>
+                      <p className="text-xs text-[#6B7280] mb-0.5" style={{ fontWeight: 600 }}>BUSINESS HOURS</p>
                       <p className="text-sm text-[#374151]">Monday – Friday: 8am – 6pm</p>
                       <p className="text-sm text-[#374151]">Saturday: By appointment</p>
                       <p className="text-sm text-[#374151]">Sunday: Closed</p>
@@ -164,9 +172,7 @@ export function Contact() {
                       <MapPin size={18} />
                     </div>
                     <div>
-                      <p className="text-xs text-[#6B7280] mb-0.5" style={{ fontWeight: 600 }}>
-                        SERVICE AREA
-                      </p>
+                      <p className="text-xs text-[#6B7280] mb-0.5" style={{ fontWeight: 600 }}>SERVICE AREA</p>
                       <p className="text-sm text-[#374151]">Northern Virginia</p>
                       <p className="text-sm text-[#374151]">Washington, DC</p>
                       <p className="text-sm text-[#374151]">Nearby Maryland</p>
@@ -195,7 +201,10 @@ export function Contact() {
 
             {/* Quote Form */}
             <div className="lg:col-span-3">
-              <div className="bg-white rounded-2xl p-8 lg:p-10 border border-[#E5E7EB]" style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.06)' }}>
+              <div
+                className="bg-white rounded-2xl p-8 lg:p-10 border border-[#E5E7EB]"
+                style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.06)' }}
+              >
                 {submitted ? (
                   <div className="text-center py-12">
                     <div
@@ -221,24 +230,19 @@ export function Contact() {
                   </div>
                 ) : (
                   <>
-                    <h2
-                      className="text-[#143177] mb-2"
-                      style={{ fontSize: '22px', fontWeight: 800 }}
-                    >
+                    <h2 className="text-[#143177] mb-2" style={{ fontSize: '22px', fontWeight: 800 }}>
                       Request a Quote
                     </h2>
-                    <p className="text-[#6B7280] text-sm mb-8">
+                    <p className="text-[#6B7280] text-sm mb-2">
                       Fill in your details and we'll respond with a tailored proposal.
                     </p>
+                    <p className="text-xs text-[#9CA3AF] mb-8">Fields marked * are required.</p>
 
                     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                      {/* Contact details */}
                       <div className="grid sm:grid-cols-2 gap-5">
                         <div>
-                          <label
-                            htmlFor="name"
-                            className="block text-xs text-[#374151] mb-1.5"
-                            style={{ fontWeight: 600 }}
-                          >
+                          <label htmlFor="name" className={labelClass} style={{ fontWeight: 600 }}>
                             Your Name *
                           </label>
                           <input
@@ -253,11 +257,7 @@ export function Contact() {
                           />
                         </div>
                         <div>
-                          <label
-                            htmlFor="email"
-                            className="block text-xs text-[#374151] mb-1.5"
-                            style={{ fontWeight: 600 }}
-                          >
+                          <label htmlFor="email" className={labelClass} style={{ fontWeight: 600 }}>
                             Email Address *
                           </label>
                           <input
@@ -275,11 +275,7 @@ export function Contact() {
 
                       <div className="grid sm:grid-cols-2 gap-5">
                         <div>
-                          <label
-                            htmlFor="phone"
-                            className="block text-xs text-[#374151] mb-1.5"
-                            style={{ fontWeight: 600 }}
-                          >
+                          <label htmlFor="phone" className={labelClass} style={{ fontWeight: 600 }}>
                             Phone (optional)
                           </label>
                           <input
@@ -293,11 +289,7 @@ export function Contact() {
                           />
                         </div>
                         <div>
-                          <label
-                            htmlFor="serviceType"
-                            className="block text-xs text-[#374151] mb-1.5"
-                            style={{ fontWeight: 600 }}
-                          >
+                          <label htmlFor="serviceType" className={labelClass} style={{ fontWeight: 600 }}>
                             Service Type *
                           </label>
                           <select
@@ -322,20 +314,134 @@ export function Contact() {
                         </div>
                       </div>
 
+                      {/* Divider */}
+                      <div className="border-t border-[#E5E7EB] pt-5">
+                        <p className="text-xs text-[#143177] mb-4" style={{ fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                          Property Details
+                        </p>
+
+                        <div className="grid sm:grid-cols-3 gap-5 mb-5">
+                          <div>
+                            <label htmlFor="bedrooms" className={labelClass} style={{ fontWeight: 600 }}>
+                              Bedrooms *
+                            </label>
+                            <select
+                              id="bedrooms"
+                              name="bedrooms"
+                              required
+                              value={form.bedrooms}
+                              onChange={handleChange}
+                              className={inputClass}
+                              style={{ cursor: 'pointer' }}
+                            >
+                              <option value="">Select...</option>
+                              <option value="Studio">Studio</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6+">6+</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label htmlFor="bathrooms" className={labelClass} style={{ fontWeight: 600 }}>
+                              Bathrooms *
+                            </label>
+                            <select
+                              id="bathrooms"
+                              name="bathrooms"
+                              required
+                              value={form.bathrooms}
+                              onChange={handleChange}
+                              className={inputClass}
+                              style={{ cursor: 'pointer' }}
+                            >
+                              <option value="">Select...</option>
+                              <option value="1">1</option>
+                              <option value="1.5">1.5</option>
+                              <option value="2">2</option>
+                              <option value="2.5">2.5</option>
+                              <option value="3">3</option>
+                              <option value="3.5">3.5</option>
+                              <option value="4+">4+</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label htmlFor="sqft" className={labelClass} style={{ fontWeight: 600 }}>
+                              Approx. Sq. Footage *
+                            </label>
+                            <select
+                              id="sqft"
+                              name="sqft"
+                              required
+                              value={form.sqft}
+                              onChange={handleChange}
+                              className={inputClass}
+                              style={{ cursor: 'pointer' }}
+                            >
+                              <option value="">Select...</option>
+                              <option value="Under 500 sq ft">Under 500 sq ft</option>
+                              <option value="500–1,000 sq ft">500–1,000 sq ft</option>
+                              <option value="1,000–1,500 sq ft">1,000–1,500 sq ft</option>
+                              <option value="1,500–2,000 sq ft">1,500–2,000 sq ft</option>
+                              <option value="2,000–2,500 sq ft">2,000–2,500 sq ft</option>
+                              <option value="2,500–3,500 sq ft">2,500–3,500 sq ft</option>
+                              <option value="3,500–5,000 sq ft">3,500–5,000 sq ft</option>
+                              <option value="5,000+ sq ft">5,000+ sq ft</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div className="grid sm:grid-cols-2 gap-5">
+                          <div>
+                            <label htmlFor="frequency" className={labelClass} style={{ fontWeight: 600 }}>
+                              One-time or Recurring? *
+                            </label>
+                            <select
+                              id="frequency"
+                              name="frequency"
+                              required
+                              value={form.frequency}
+                              onChange={handleChange}
+                              className={inputClass}
+                              style={{ cursor: 'pointer' }}
+                            >
+                              <option value="">Select...</option>
+                              <option value="One-time cleaning">One-time cleaning</option>
+                              <option value="Weekly recurring">Weekly recurring</option>
+                              <option value="Bi-weekly recurring">Bi-weekly recurring</option>
+                              <option value="Monthly recurring">Monthly recurring</option>
+                              <option value="Not sure yet">Not sure yet</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label htmlFor="focusAreas" className={labelClass} style={{ fontWeight: 600 }}>
+                              Specific Focus Areas *
+                            </label>
+                            <input
+                              id="focusAreas"
+                              name="focusAreas"
+                              type="text"
+                              required
+                              placeholder="e.g. kitchen, bathrooms, basement..."
+                              value={form.focusAreas}
+                              onChange={handleChange}
+                              className={inputClass}
+                            />
+                          </div>
+                        </div>
+                      </div>
+
                       <div>
-                        <label
-                          htmlFor="message"
-                          className="block text-xs text-[#374151] mb-1.5"
-                          style={{ fontWeight: 600 }}
-                        >
-                          Tell us about your space &amp; needs *
+                        <label htmlFor="message" className={labelClass} style={{ fontWeight: 600 }}>
+                          Additional Notes (optional)
                         </label>
                         <textarea
                           id="message"
                           name="message"
-                          required
-                          rows={5}
-                          placeholder="Describe your home or office, approximate size, frequency you're looking for, any specific requirements..."
+                          rows={4}
+                          placeholder="Anything else we should know — pets, access instructions, special requests..."
                           value={form.message}
                           onChange={handleChange}
                           className={inputClass}
