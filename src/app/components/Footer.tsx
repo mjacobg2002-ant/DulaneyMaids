@@ -99,7 +99,7 @@ export function Footer() {
               <li>
                 <div className="flex items-center gap-2.5 text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
                   <Phone size={15} className="flex-shrink-0" />
-                  <span>Contact us for phone details</span>
+                  <span>(202) 202-1674</span>
                 </div>
               </li>
               <li>
