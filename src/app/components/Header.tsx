@@ -1,16 +1,20 @@
 import { useState, useRef, useEffect } from 'react';
-import { Link, NavLink } from 'react-router';
+import { Link, NavLink, useLocation } from 'react-router';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import dulaneyLogo from '../../imports/From_selection_3.PNG';
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [atTop, setAtTop] = useState(true);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const { pathname } = useLocation();
+
+  const isHome = pathname === '/';
+  const scrolled = !isHome || !atTop;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setAtTop(window.scrollY <= 24);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
