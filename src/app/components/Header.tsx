@@ -108,7 +108,7 @@ export function Header() {
 
             <NavLink to="/service-areas" className={navLinkClass}>Service Areas</NavLink>
             <NavLink to="/about" className={navLinkClass}>About</NavLink>
-            <NavLink to="/reviews" className={navLinkClass}>Reviews</NavLink>
+            {/* <NavLink to="/reviews" className={navLinkClass}>Reviews</NavLink> */}
             <NavLink to="/faq" className={navLinkClass}>FAQ</NavLink>
             <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
           </nav>
@@ -152,7 +152,7 @@ export function Header() {
               { to: '/commercial', label: 'Commercial Cleaning' },
               { to: '/service-areas', label: 'Service Areas' },
               { to: '/about', label: 'About' },
-              { to: '/reviews', label: 'Reviews' },
+              // { to: '/reviews', label: 'Reviews' },
               { to: '/faq', label: 'FAQ' },
               { to: '/contact', label: 'Contact' },
             ].map(({ to, label }) => (
