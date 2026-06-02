@@ -1,10 +1,10 @@
 import { Link } from 'react-router';
+import { motion, useReducedMotion } from 'motion/react';
 import { CheckCircle2, ArrowRight, Home, Sparkles, MoveRight, HardHat } from 'lucide-react';
 import { CTABand } from '../components/CTABand';
 import { cities } from '../data/cities';
 
 const HERO_IMG = 'https://images.unsplash.com/photo-1628745277862-bc0b2d68c50c?w=1200&h=550&fit=crop&auto=format';
-const INTERIOR_IMG = 'https://images.unsplash.com/photo-1613545325278-f24b0cae1224?w=700&h=500&fit=crop&auto=format';
 
 const services = [
   {
@@ -27,7 +27,7 @@ const services = [
     icon: <Sparkles size={22} />,
     title: 'Deep Cleaning',
     headline: 'A thorough clean from top to bottom',
-    desc: 'When routine maintenance isn\'t enough, our deep clean tackles every corner — inside cabinets, behind appliances, tile grout, and beyond.',
+    desc: "When routine maintenance isn't enough, our deep clean tackles every corner — inside cabinets, behind appliances, tile grout, and beyond.",
     includes: [
       'Everything in standard cleaning',
       'Inside oven, refrigerator &amp; cabinets',
@@ -42,7 +42,7 @@ const services = [
     icon: <MoveRight size={22} />,
     title: 'Move-In / Move-Out Cleaning',
     headline: 'Start fresh — or leave it spotless',
-    desc: 'Whether you\'re arriving at a new home or handing over the keys, our move cleaning ensures every inch is ready for what\'s next.',
+    desc: "Whether you're arriving at a new home or handing over the keys, our move cleaning ensures every inch is ready for what's next.",
     includes: [
       'Complete deep clean of all rooms',
       'Inside all cabinets &amp; closets',
@@ -69,9 +69,44 @@ const services = [
   },
 ];
 
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24, scale: 0.98 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.55, ease: EASE } },
+};
+
 export function Residential() {
   const vaLinks = cities.filter((c) => c.region === 'northern-va').slice(0, 6);
   const mdLinks = cities.filter((c) => c.region === 'maryland').slice(0, 4);
+  const shouldReduceMotion = useReducedMotion();
+
+  const inView = (delay = 0) =>
+    shouldReduceMotion
+      ? {}
+      : {
+          initial: 'hidden' as const,
+          whileInView: 'visible' as const,
+          viewport: { once: true, amount: 0.2 },
+          variants: {
+            hidden: { opacity: 0, y: 24, scale: 0.98 },
+            visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.55, ease: EASE, delay } },
+          },
+        };
+
+  const staggerGrid = shouldReduceMotion
+    ? {}
+    : {
+        initial: 'hidden' as const,
+        whileInView: 'visible' as const,
+        viewport: { once: true, amount: 0.1 },
+        variants: {
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
+        },
+      };
+
+  const card = shouldReduceMotion ? {} : { variants: fadeUp };
 
   return (
     <div>
@@ -83,23 +118,40 @@ export function Residential() {
           className="w-full h-64 lg:h-80 object-cover opacity-25 absolute inset-0"
         />
         <div className="relative max-w-[1200px] mx-auto px-6 lg:px-10 py-20 lg:py-24">
-          <p
+          <motion.p
             className="text-[#F7D156] text-xs mb-3"
             style={{ fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: EASE }}
           >
             Residential Cleaning — DMV
-          </p>
-          <h1
+          </motion.p>
+          <motion.h1
             className="text-white mb-5"
             style={{ fontSize: 'clamp(32px, 5vw, 52px)', fontWeight: 800, lineHeight: 1.15 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: EASE, delay: 0.1 }}
           >
             Residential Cleaning in the DMV
-          </h1>
-          <p className="text-white/80 max-w-2xl mb-8" style={{ fontSize: '18px', lineHeight: '1.7' }}>
+          </motion.h1>
+          <motion.p
+            className="text-white/80 max-w-2xl mb-8"
+            style={{ fontSize: '18px', lineHeight: '1.7' }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, ease: EASE, delay: 0.2 }}
+          >
             Professional house cleaning and maid service for homes across Northern Virginia, Washington DC, and
             Maryland. Tailored quotes, flexible scheduling, and reliable results.
-          </p>
-          <div className="flex flex-wrap gap-4">
+          </motion.p>
+          <motion.div
+            className="flex flex-wrap gap-4"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: EASE, delay: 0.3 }}
+          >
             <Link
               to="/contact"
               style={{ backgroundColor: '#3E6EDC', fontWeight: 700 }}
@@ -114,14 +166,14 @@ export function Residential() {
             >
               View Service Areas
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* ─── Services ─────────────────────────────────────────── */}
       <section className="py-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-          <div className="text-center mb-14">
+          <motion.div className="text-center mb-14" {...inView()}>
             <h2
               className="text-[#143177] mb-4"
               style={{ fontSize: 'clamp(26px, 4vw, 38px)', fontWeight: 800 }}
@@ -132,13 +184,14 @@ export function Residential() {
               From routine upkeep to deep cleans, move services, and post-construction — each service is
               adapted to your home and schedule.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-16">
             {services.map((s, i) => (
-              <div
+              <motion.div
                 key={s.id}
                 id={s.id}
+                {...inView()}
                 className={`grid lg:grid-cols-2 gap-10 items-center ${i % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''}`}
               >
                 <div className="bg-[#F6F8FC] rounded-2xl p-8 border border-[#E5E7EB]">
@@ -185,7 +238,7 @@ export function Residential() {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -194,23 +247,31 @@ export function Residential() {
       {/* ─── Internal Links ────────────────────────────────────── */}
       <section className="py-16 bg-[#F6F8FC]">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-          <h2 className="text-[#143177] mb-8" style={{ fontSize: '22px', fontWeight: 800 }}>
+          <motion.h2
+            className="text-[#143177] mb-8"
+            style={{ fontSize: '22px', fontWeight: 800 }}
+            {...inView()}
+          >
             Residential Cleaning Available Near You
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          </motion.h2>
+          <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" {...staggerGrid}>
             {[...vaLinks, ...mdLinks].map((city) => (
-              <Link
-                key={city.slug}
-                to={`/service-areas/${city.slug}`}
-                className="flex items-center justify-between bg-white rounded-xl px-5 py-3.5 border border-[#E5E7EB] hover:border-[#3E6EDC] transition-colors group"
-              >
-                <span className="text-[#374151] text-sm group-hover:text-[#143177] transition-colors" style={{ fontWeight: 500 }}>
-                  {city.name}, {city.state}
-                </span>
-                <ArrowRight size={14} className="text-[#3E6EDC] opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Link>
+              <motion.div key={city.slug} {...card}>
+                <Link
+                  to={`/service-areas/${city.slug}`}
+                  className="flex items-center justify-between bg-white rounded-xl px-5 py-3.5 border border-[#E5E7EB] hover:border-[#3E6EDC] transition-colors group"
+                >
+                  <span
+                    className="text-[#374151] text-sm group-hover:text-[#143177] transition-colors"
+                    style={{ fontWeight: 500 }}
+                  >
+                    {city.name}, {city.state}
+                  </span>
+                  <ArrowRight size={14} className="text-[#3E6EDC] opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
