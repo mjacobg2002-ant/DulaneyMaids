@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
+import { motion, useReducedMotion, AnimatePresence } from 'motion/react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { CTABand } from '../components/CTABand';
 
@@ -9,19 +10,19 @@ const faqCategories = [
     items: [
       {
         q: 'How does the quote process work?',
-        a: 'We make it simple. Reach out by email or phone with details about your space and cleaning needs. We\'ll review your information and send a tailored, transparent quote — no hidden fees, no obligations.',
+        a: "We make it simple. Reach out by email or phone with details about your space and cleaning needs. We'll review your information and send a tailored, transparent quote — no hidden fees, no obligations.",
       },
       {
         q: 'Is there a consultation or intake form?',
-        a: 'We gather what we need through a brief intake — usually just a few questions about your space, service type, and preferred schedule. This helps us provide an accurate, relevant quote.',
+        a: "We gather what we need through a brief intake — usually just a few questions about your space, service type, and preferred schedule. This helps us provide an accurate, relevant quote.",
       },
       {
         q: 'Do you offer fixed-price packages or custom quotes?',
-        a: 'All quotes are tailored to your specific space and needs. We don\'t publish standard pricing because every home and workplace is different. Your quote reflects your actual requirements.',
+        a: "All quotes are tailored to your specific space and needs. We don't publish standard pricing because every home and workplace is different. Your quote reflects your actual requirements.",
       },
       {
         q: 'How quickly will I receive a quote after reaching out?',
-        a: 'We aim to respond to all inquiries promptly. Email us at camerondavis@dulaneyco.net and we\'ll follow up as soon as possible — typically the same day or next business day.',
+        a: "We aim to respond to all inquiries promptly. Email us at camerondavis@dulaneyco.net and we'll follow up as soon as possible — typically the same day or next business day.",
       },
     ],
   },
@@ -34,7 +35,7 @@ const faqCategories = [
       },
       {
         q: 'Do you serve my neighborhood?',
-        a: 'If you\'re in or near the Northern Virginia, DC, or Maryland communities we cover, there\'s a good chance we serve your area. Reach out and we\'ll confirm coverage for your address.',
+        a: "If you're in or near the Northern Virginia, DC, or Maryland communities we cover, there's a good chance we serve your area. Reach out and we'll confirm coverage for your address.",
       },
     ],
   },
@@ -43,11 +44,11 @@ const faqCategories = [
     items: [
       {
         q: 'Do you bring your own cleaning supplies?',
-        a: 'Yes — we arrive fully equipped with the tools and products needed to deliver a thorough clean. If you have specific product preferences or sensitivities, let us know when you get in touch and we\'ll accommodate where possible.',
+        a: "Yes — we arrive fully equipped with the tools and products needed to deliver a thorough clean. If you have specific product preferences or sensitivities, let us know when you get in touch and we'll accommodate where possible.",
       },
       {
         q: 'Do you use eco-friendly or green cleaning products?',
-        a: 'We can accommodate requests for specific product types, including eco-friendly options. Mention your preference when requesting your quote and we\'ll discuss what\'s available.',
+        a: "We can accommodate requests for specific product types, including eco-friendly options. Mention your preference when requesting your quote and we'll discuss what's available.",
       },
     ],
   },
@@ -77,7 +78,7 @@ const faqCategories = [
       },
       {
         q: 'Can I reschedule or cancel a booking?',
-        a: 'Life happens. We ask that you give us reasonable notice to reschedule or cancel. Contact us by email or phone and we\'ll work with you to find an alternative.',
+        a: "Life happens. We ask that you give us reasonable notice to reschedule or cancel. Contact us by email or phone and we'll work with you to find an alternative.",
       },
       {
         q: 'Do you offer one-time cleaning or only recurring service?',
@@ -87,32 +88,60 @@ const faqCategories = [
   },
 ];
 
+const EASE = [0.22, 1, 0.36, 1] as const;
+
 export function FAQ() {
   const [openItem, setOpenItem] = useState<string | null>(null);
+  const shouldReduceMotion = useReducedMotion();
 
   const toggleItem = (id: string) => setOpenItem((prev) => (prev === id ? null : id));
+
+  const inView = (delay = 0) =>
+    shouldReduceMotion
+      ? {}
+      : {
+          initial: 'hidden' as const,
+          whileInView: 'visible' as const,
+          viewport: { once: true, amount: 0.2 },
+          variants: {
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: EASE, delay } },
+          },
+        };
 
   return (
     <div>
       {/* ─── Hero ────────────────────────────────────────────── */}
       <section style={{ backgroundColor: '#143177' }} className="py-20 lg:py-24">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-          <p
+          <motion.p
             className="text-[#F7D156] text-xs mb-3"
             style={{ fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: EASE }}
           >
             FAQ
-          </p>
-          <h1
+          </motion.p>
+          <motion.h1
             className="text-white mb-5"
             style={{ fontSize: 'clamp(32px, 5vw, 52px)', fontWeight: 800, lineHeight: 1.15 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: EASE, delay: 0.1 }}
           >
             Frequently Asked Questions
-          </h1>
-          <p className="text-white/80 max-w-2xl" style={{ fontSize: '18px', lineHeight: '1.7' }}>
+          </motion.h1>
+          <motion.p
+            className="text-white/80 max-w-2xl"
+            style={{ fontSize: '18px', lineHeight: '1.7' }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, ease: EASE, delay: 0.2 }}
+          >
             Answers about our quoting process, service areas, supplies, scheduling, and professional standards.
             Don't see your question? Just contact us.
-          </p>
+          </motion.p>
         </div>
       </section>
 
@@ -120,8 +149,8 @@ export function FAQ() {
       <section className="py-20 bg-white">
         <div className="max-w-[800px] mx-auto px-6 lg:px-10">
           <div className="flex flex-col gap-10">
-            {faqCategories.map((cat) => (
-              <div key={cat.category}>
+            {faqCategories.map((cat, catIdx) => (
+              <motion.div key={cat.category} {...inView(catIdx * 0.05)}>
                 <h2
                   className="text-[#143177] mb-4"
                   style={{ fontSize: '19px', fontWeight: 800 }}
@@ -138,33 +167,44 @@ export function FAQ() {
                           onClick={() => toggleItem(id)}
                           className="w-full flex items-center justify-between gap-6 px-6 py-4 text-left hover:bg-[#F6F8FC] transition-colors"
                         >
-                          <span
-                            className="text-[#143177] text-sm"
-                            style={{ fontWeight: 600 }}
-                          >
+                          <span className="text-[#143177] text-sm" style={{ fontWeight: 600 }}>
                             {item.q}
                           </span>
-                          <ChevronDown
-                            size={16}
-                            className={`flex-shrink-0 text-[#3E6EDC] transition-transform ${isOpen ? 'rotate-180' : ''}`}
-                          />
+                          <motion.span
+                            animate={{ rotate: isOpen ? 180 : 0 }}
+                            transition={{ duration: 0.25, ease: EASE }}
+                            className="flex-shrink-0"
+                          >
+                            <ChevronDown size={16} className="text-[#3E6EDC]" />
+                          </motion.span>
                         </button>
-                        {isOpen && (
-                          <div className="px-6 pb-5 bg-[#F6F8FC]">
-                            <p className="text-sm text-[#374151]" style={{ lineHeight: '1.75' }}>
-                              {item.a}
-                            </p>
-                          </div>
-                        )}
+                        <AnimatePresence initial={false}>
+                          {isOpen && (
+                            <motion.div
+                              key="answer"
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.28, ease: EASE }}
+                              style={{ overflow: 'hidden' }}
+                            >
+                              <div className="px-6 pb-5 bg-[#F6F8FC]">
+                                <p className="text-sm text-[#374151]" style={{ lineHeight: '1.75' }}>
+                                  {item.a}
+                                </p>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
                     );
                   })}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
-          <div className="mt-14 text-center">
+          <motion.div className="mt-14 text-center" {...inView()}>
             <p className="text-[#374151] mb-4" style={{ fontSize: '16px', lineHeight: '1.7' }}>
               Still have questions? We're happy to help.
             </p>
@@ -175,7 +215,7 @@ export function FAQ() {
             >
               Contact Us <ArrowRight size={17} />
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
