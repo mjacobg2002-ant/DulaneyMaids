@@ -1,32 +1,78 @@
 import { Link } from 'react-router';
+import { motion, useReducedMotion } from 'motion/react';
 import { CheckCircle2, Shield, Sparkles, Lock, ArrowRight } from 'lucide-react';
 import { CTABand } from '../components/CTABand';
 
 const TEAM_IMG = 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=700&h=500&fit=crop&auto=format';
 const INTERIOR_IMG = 'https://images.unsplash.com/photo-1638885930125-85350348d266?w=700&h=500&fit=crop&auto=format';
 
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24, scale: 0.98 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.55, ease: EASE } },
+};
+
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
+};
+
 export function About() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const inView = (delay = 0) =>
+    shouldReduceMotion
+      ? {}
+      : {
+          initial: 'hidden' as const,
+          whileInView: 'visible' as const,
+          viewport: { once: true, amount: 0.25 },
+          variants: {
+            hidden: { opacity: 0, y: 24, scale: 0.98 },
+            visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.55, ease: EASE, delay } },
+          },
+        };
+
+  const staggerGrid = shouldReduceMotion
+    ? {}
+    : { initial: 'hidden' as const, whileInView: 'visible' as const, viewport: { once: true, amount: 0.15 }, variants: stagger };
+
+  const card = shouldReduceMotion ? {} : { variants: fadeUp };
+
   return (
     <div>
       {/* ─── Hero ────────────────────────────────────────────── */}
       <section style={{ backgroundColor: '#143177' }} className="py-20 lg:py-24">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-          <p
+          <motion.p
             className="text-[#F7D156] text-xs mb-3"
             style={{ fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: EASE }}
           >
             About Us
-          </p>
-          <h1
+          </motion.p>
+          <motion.h1
             className="text-white mb-5"
             style={{ fontSize: 'clamp(32px, 5vw, 52px)', fontWeight: 800, lineHeight: 1.15 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: EASE, delay: 0.1 }}
           >
             Professional Cleaning Built on Standards and Trust
-          </h1>
-          <p className="text-white/80 max-w-2xl" style={{ fontSize: '18px', lineHeight: '1.7' }}>
+          </motion.h1>
+          <motion.p
+            className="text-white/80 max-w-2xl"
+            style={{ fontSize: '18px', lineHeight: '1.7' }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, ease: EASE, delay: 0.2 }}
+          >
             Dulaney Maids was founded on a simple principle: cleaning services should be professional,
             consistent, and confidential. We serve the DMV region with that commitment on every job.
-          </p>
+          </motion.p>
         </div>
       </section>
 
@@ -34,7 +80,7 @@ export function About() {
       <section className="py-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <div>
+            <motion.div {...inView()}>
               <h2
                 className="text-[#143177] mb-6"
                 style={{ fontSize: 'clamp(24px, 3.5vw, 34px)', fontWeight: 800 }}
@@ -67,15 +113,15 @@ export function About() {
                   Get a Quote <ArrowRight size={17} />
                 </Link>
               </div>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div {...inView(0.15)}>
               <img
                 src={TEAM_IMG}
                 alt="Professional cleaning team at work"
                 className="w-full h-80 lg:h-[440px] object-cover rounded-2xl"
                 style={{ boxShadow: '0 16px 40px rgba(20,49,119,0.12)' }}
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -83,7 +129,7 @@ export function About() {
       {/* ─── Values ───────────────────────────────────────────── */}
       <section className="py-20 bg-[#F6F8FC]">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-          <div className="text-center mb-12">
+          <motion.div className="text-center mb-12" {...inView()}>
             <h2
               className="text-[#143177] mb-4"
               style={{ fontSize: 'clamp(24px, 3.5vw, 34px)', fontWeight: 800 }}
@@ -94,9 +140,9 @@ export function About() {
               Two principles shape everything we do — quality in our work and confidentiality in how we
               conduct it.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <motion.div className="grid md:grid-cols-3 gap-6" {...staggerGrid}>
             {[
               {
                 icon: <Sparkles size={22} />,
@@ -106,7 +152,7 @@ export function About() {
               {
                 icon: <Shield size={22} />,
                 title: 'Vetted Team',
-                text: 'Our team operates with integrity and professionalism. We treat every client\'s home and workplace with respect.',
+                text: "Our team operates with integrity and professionalism. We treat every client's home and workplace with respect.",
               },
               {
                 icon: <Lock size={22} />,
@@ -114,7 +160,7 @@ export function About() {
                 text: 'Privacy matters — especially in homes and professional environments. We take discretion seriously and maintain it without exception.',
               },
             ].map((v) => (
-              <div key={v.title} className="bg-white rounded-2xl p-8 border border-[#E5E7EB]">
+              <motion.div key={v.title} {...card} className="bg-white rounded-2xl p-8 border border-[#E5E7EB]">
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
                   style={{ backgroundColor: '#EEF1F7', color: '#143177' }}
@@ -127,9 +173,9 @@ export function About() {
                 <p className="text-[#374151] text-sm" style={{ lineHeight: '1.7' }}>
                   {v.text}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -137,15 +183,15 @@ export function About() {
       <section className="py-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <div>
+            <motion.div {...inView()}>
               <img
                 src={INTERIOR_IMG}
                 alt="Luxury clean living room interior"
                 className="w-full h-72 lg:h-[400px] object-cover rounded-2xl"
                 style={{ boxShadow: '0 16px 40px rgba(20,49,119,0.12)' }}
               />
-            </div>
-            <div>
+            </motion.div>
+            <motion.div {...inView(0.15)}>
               <h2
                 className="text-[#143177] mb-5"
                 style={{ fontSize: 'clamp(24px, 3.5vw, 34px)', fontWeight: 800 }}
@@ -178,7 +224,7 @@ export function About() {
               >
                 View all service areas <ArrowRight size={15} />
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
