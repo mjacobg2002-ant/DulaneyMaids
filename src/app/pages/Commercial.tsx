@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import { motion, useReducedMotion } from 'motion/react';
 import { ArrowRight, Building2, CalendarCheck, HardHat, Users, Home, HeartPulse, Leaf, Settings2 } from 'lucide-react';
 import { CTABand } from '../components/CTABand';
 import { cities } from '../data/cities';
@@ -40,7 +41,7 @@ const solutions = [
     id: 'exterior',
     icon: <Leaf size={22} />,
     title: 'Exterior Appearance & Property Upkeep',
-    desc: 'A property\'s exterior is often the first thing visitors notice. We help maintain a clean and professional appearance throughout outdoor common areas, walkways, entry points, parking areas, and landscaped spaces, contributing to both curb appeal and overall property presentation.',
+    desc: "A property's exterior is often the first thing visitors notice. We help maintain a clean and professional appearance throughout outdoor common areas, walkways, entry points, parking areas, and landscaped spaces, contributing to both curb appeal and overall property presentation.",
   },
   {
     id: 'post-construction',
@@ -56,10 +57,45 @@ const solutions = [
   },
 ];
 
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24, scale: 0.98 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.55, ease: EASE } },
+};
+
 export function Commercial() {
   const featuredAreas = cities.filter((c) =>
     ['arlington-va', 'washington-dc', 'bethesda-md', 'fairfax-va', 'reston-va', 'mclean-va'].includes(c.slug)
   );
+  const shouldReduceMotion = useReducedMotion();
+
+  const inView = (delay = 0) =>
+    shouldReduceMotion
+      ? {}
+      : {
+          initial: 'hidden' as const,
+          whileInView: 'visible' as const,
+          viewport: { once: true, amount: 0.2 },
+          variants: {
+            hidden: { opacity: 0, y: 24, scale: 0.98 },
+            visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.55, ease: EASE, delay } },
+          },
+        };
+
+  const staggerGrid = shouldReduceMotion
+    ? {}
+    : {
+        initial: 'hidden' as const,
+        whileInView: 'visible' as const,
+        viewport: { once: true, amount: 0.08 },
+        variants: {
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
+        },
+      };
+
+  const card = shouldReduceMotion ? {} : { variants: fadeUp };
 
   return (
     <div>
@@ -71,25 +107,42 @@ export function Commercial() {
           className="w-full h-64 lg:h-80 object-cover opacity-20 absolute inset-0"
         />
         <div className="relative max-w-[1200px] mx-auto px-6 lg:px-10 py-20 lg:py-24">
-          <p
+          <motion.p
             className="text-[#F7D156] text-xs mb-3"
             style={{ fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: EASE }}
           >
             Commercial Cleaning Solutions — DMV
-          </p>
-          <h1
+          </motion.p>
+          <motion.h1
             className="text-white mb-5"
             style={{ fontSize: 'clamp(32px, 5vw, 52px)', fontWeight: 800, lineHeight: 1.15 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: EASE, delay: 0.1 }}
           >
             Commercial Cleaning Solutions
-          </h1>
-          <p className="text-white/80 max-w-2xl mb-4" style={{ fontSize: '18px', lineHeight: '1.7' }}>
+          </motion.h1>
+          <motion.p
+            className="text-white/80 max-w-2xl mb-4"
+            style={{ fontSize: '18px', lineHeight: '1.7' }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, ease: EASE, delay: 0.2 }}
+          >
             At Dulaney Maids, we provide dependable cleaning and facility support services for apartment
             communities, office buildings, assisted living facilities, and commercial properties across the DMV.
             Our goal is to help clients maintain clean, healthy, and professional environments that leave lasting
             impressions on residents, employees, and visitors.
-          </p>
-          <div className="flex flex-wrap gap-4 mt-8">
+          </motion.p>
+          <motion.div
+            className="flex flex-wrap gap-4 mt-8"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: EASE, delay: 0.32 }}
+          >
             <Link
               to="/contact"
               style={{ backgroundColor: '#3E6EDC', fontWeight: 700 }}
@@ -104,12 +157,15 @@ export function Commercial() {
             >
               View Service Areas
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* ─── Client Types ─────────────────────────────────────── */}
-      <section className="py-10 bg-[#F6F8FC] border-b border-[#E5E7EB]">
+      <motion.section
+        className="py-10 bg-[#F6F8FC] border-b border-[#E5E7EB]"
+        {...inView()}
+      >
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <div className="flex flex-wrap items-center gap-3">
             <span className="text-sm text-[#6B7280] mr-2" style={{ fontWeight: 600 }}>We serve:</span>
@@ -131,12 +187,12 @@ export function Commercial() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* ─── Solutions Grid ───────────────────────────────────── */}
       <section className="py-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-          <div className="text-center mb-14">
+          <motion.div className="text-center mb-14" {...inView()}>
             <h2
               className="text-[#143177] mb-4"
               style={{ fontSize: 'clamp(26px, 4vw, 38px)', fontWeight: 800 }}
@@ -147,13 +203,14 @@ export function Commercial() {
               From daily upkeep to specialized facility programs — we deliver consistent, professional service
               tailored to your property and schedule.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <motion.div className="grid md:grid-cols-2 gap-6" {...staggerGrid}>
             {solutions.map((s) => (
-              <div
+              <motion.div
                 key={s.id}
                 id={s.id}
+                {...card}
                 className="bg-[#F6F8FC] rounded-2xl p-8 border border-[#E5E7EB] flex flex-col"
               >
                 <div
@@ -168,11 +225,11 @@ export function Commercial() {
                 <p className="text-[#374151] flex-1" style={{ fontSize: '15px', lineHeight: '1.75' }}>
                   {s.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="text-center mt-12">
+          <motion.div className="text-center mt-12" {...inView()}>
             <Link
               to="/contact"
               style={{ backgroundColor: '#3E6EDC', fontWeight: 700 }}
@@ -180,33 +237,38 @@ export function Commercial() {
             >
               Request a Custom Quote <ArrowRight size={17} />
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* ─── Internal Links ────────────────────────────────────── */}
       <section className="py-16 bg-[#F6F8FC]">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-          <h2 className="text-[#143177] mb-6" style={{ fontSize: '22px', fontWeight: 800 }}>
+          <motion.h2
+            className="text-[#143177] mb-6"
+            style={{ fontSize: '22px', fontWeight: 800 }}
+            {...inView()}
+          >
             Commercial Cleaning Across the DMV
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          </motion.h2>
+          <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" {...staggerGrid}>
             {featuredAreas.map((city) => (
-              <Link
-                key={city.slug}
-                to={`/service-areas/${city.slug}`}
-                className="flex items-center justify-between bg-white rounded-xl px-5 py-3.5 border border-[#E5E7EB] hover:border-[#3E6EDC] transition-colors group"
-              >
-                <span
-                  className="text-[#374151] text-sm group-hover:text-[#143177] transition-colors"
-                  style={{ fontWeight: 500 }}
+              <motion.div key={city.slug} {...card}>
+                <Link
+                  to={`/service-areas/${city.slug}`}
+                  className="flex items-center justify-between bg-white rounded-xl px-5 py-3.5 border border-[#E5E7EB] hover:border-[#3E6EDC] transition-colors group"
                 >
-                  {city.name}, {city.state}
-                </span>
-                <ArrowRight size={14} className="text-[#3E6EDC] opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Link>
+                  <span
+                    className="text-[#374151] text-sm group-hover:text-[#143177] transition-colors"
+                    style={{ fontWeight: 500 }}
+                  >
+                    {city.name}, {city.state}
+                  </span>
+                  <ArrowRight size={14} className="text-[#3E6EDC] opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
