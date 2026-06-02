@@ -145,7 +145,7 @@ export function Contact() {
                     </div>
                     <div>
                       <p className="text-xs text-[#6B7280] mb-0.5" style={{ fontWeight: 600 }}>PHONE</p>
-                      <p className="text-sm text-[#374151]">Contact us by email to receive phone details</p>
+                      <p className="text-sm text-[#374151]">(202) 202-1674</p>
                     </div>
                   </div>
 
