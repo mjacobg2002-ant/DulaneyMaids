@@ -317,7 +317,7 @@ export function Home() {
                     'Standard &amp; recurring cleaning',
                     'Deep cleaning services',
                     'Move-in / Move-out cleaning',
-                    'Post-construction cleanup',
+                    
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-[#374151]">
                       <CheckCircle2 size={15} className="text-[#4C9961] flex-shrink-0" />
@@ -378,7 +378,7 @@ export function Home() {
                     'Office &amp; workspace cleaning',
                     'Recurring janitorial service',
                     'Facility maintenance',
-                    'Post-construction turnover',
+                    
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-[#374151]">
                       <CheckCircle2 size={15} className="text-[#4C9961] flex-shrink-0" />
