@@ -181,7 +181,7 @@ export function ServiceAreas() {
             Services Available in All Areas
           </motion.h2>
           <motion.div
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
+            className="flex flex-wrap justify-center gap-4"
             {...staggerGrid()}
           >
             {[
@@ -189,7 +189,7 @@ export function ServiceAreas() {
               { to: '/commercial', label: 'Commercial Cleaning', desc: 'Office &amp; facility cleaning' },
               { to: '/residential', label: 'Deep Cleaning', desc: 'Thorough top-to-bottom clean' },
               { to: '/residential', label: 'Move-In / Move-Out', desc: 'Fresh start or clean handover' },
-              { to: '/residential', label: 'Post-Construction', desc: 'Construction dust &amp; debris removal' },
+              
               { to: '/commercial', label: 'Janitorial Services', desc: 'Recurring facility maintenance' },
             ].map(({ to, label, desc }) => (
               <motion.div key={label} {...card}>
