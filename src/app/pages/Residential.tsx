@@ -52,21 +52,7 @@ const services = [
       'Ideal for landlords &amp; tenants alike',
     ],
   },
-  {
-    id: 'construction',
-    icon: <HardHat size={22} />,
-    title: 'Post-Construction Cleaning',
-    headline: 'Clear the dust — reveal the result',
-    desc: 'Renovation debris, construction dust, and adhesive residue require specialist attention. We prepare your newly built or renovated space for occupancy.',
-    includes: [
-      'Removal of construction dust &amp; debris',
-      'Window &amp; glass cleaning',
-      'Paint overspray &amp; adhesive removal',
-      'Detailed floor cleaning &amp; polishing',
-      'All surfaces wiped &amp; sanitized',
-      'Final inspection-ready finish',
-    ],
-  },
+ 
 ];
 
 const EASE = [0.22, 1, 0.36, 1] as const;
