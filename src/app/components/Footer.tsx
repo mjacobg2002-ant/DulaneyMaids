@@ -42,7 +42,7 @@ export function Footer() {
                 { to: '/commercial', label: 'Commercial Cleaning' },
                 { to: '/residential', label: 'Deep Cleaning' },
                 { to: '/residential', label: 'Move-In / Move-Out' },
-                { to: '/residential', label: 'Post-Construction' },
+              
                 { to: '/commercial', label: 'Janitorial Services' },
               ].map(({ to, label }) => (
                 <li key={label}>
