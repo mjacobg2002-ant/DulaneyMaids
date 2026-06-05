@@ -167,7 +167,7 @@ export function Residential() {
               Our Residential Cleaning Services
             </h2>
             <p className="text-[#374151] max-w-2xl mx-auto" style={{ fontSize: '17px', lineHeight: '1.7' }}>
-              From routine upkeep to deep cleans, move services, and post-construction — each service is
+              From routine upkeep, deep cleans, and move services — each service is
               adapted to your home and schedule.
             </p>
           </motion.div>
