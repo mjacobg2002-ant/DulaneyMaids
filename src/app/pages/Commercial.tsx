@@ -43,12 +43,7 @@ const solutions = [
     title: 'Exterior Appearance & Property Upkeep',
     desc: "A property's exterior is often the first thing visitors notice. We help maintain a clean and professional appearance throughout outdoor common areas, walkways, entry points, parking areas, and landscaped spaces, contributing to both curb appeal and overall property presentation.",
   },
-  {
-    id: 'post-construction',
-    icon: <HardHat size={22} />,
-    title: 'Post-Construction / Turnover Cleaning',
-    desc: 'After construction, renovation, or tenant turnover, we prepare commercial spaces for immediate occupancy. Our team removes construction dust and debris, cleans windows and glass, eliminates adhesive and paint residue, and delivers a thorough finish that is inspection-ready from the moment we leave.',
-  },
+  
   {
     id: 'custom-programs',
     icon: <Settings2 size={22} />,
