@@ -200,7 +200,7 @@ export function Commercial() {
             </p>
           </motion.div>
 
-          <motion.div className="grid md:grid-cols-2 gap-6" {...staggerGrid}>
+          <motion.div className="grid md:grid-cols-2 gap-6 [&>*:last-child]:md:col-span-2 [&>*:last-child]:md:max-w-lg [&>*:last-child]:md:mx-auto" {...staggerGrid}>
             {solutions.map((s) => (
               <motion.div
                 key={s.id}
