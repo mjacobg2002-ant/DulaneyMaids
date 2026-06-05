@@ -65,7 +65,7 @@ export function Footer() {
               {[
                 { to: '/about', label: 'About Us' },
                 { to: '/service-areas', label: 'Service Areas' },
-                { to: '/reviews', label: 'Reviews' },
+               
                 { to: '/faq', label: 'FAQ' },
                 { to: '/contact', label: 'Contact' },
               ].map(({ to, label }) => (
