@@ -1,0 +1,4 @@
+/*
+ * Fonts are loaded via <link> tags in index.html (with preconnect) instead of
+ * a CSS @import — this removes a render-blocking request chain and improves LCP.
+ */
