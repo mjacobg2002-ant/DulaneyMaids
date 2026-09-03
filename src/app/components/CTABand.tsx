@@ -15,8 +15,33 @@ export function CTABand({
   primaryLabel = 'Get a Free Quote',
 }: CTABandProps) {
   return (
-    <section style={{ backgroundColor: '#143177' }} className="py-20">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-10 text-center">
+    <section className="relative overflow-hidden py-28" style={{ backgroundColor: '#143177' }}>
+      {/* Background video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        src="/video/footer.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+      />
+      {/* Subtle navy tint so the video stays visible but the text stays legible */}
+      <div
+        className="absolute inset-0"
+        style={{ backgroundColor: 'rgba(20,49,119,0.5)' }}
+      />
+      {/* Fade the video in from the page above and out into the footer below */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0) 15%, rgba(20,49,119,0) 78%, #143177 100%)',
+        }}
+      />
+
+      <div className="relative z-10 max-w-[1200px] mx-auto px-6 lg:px-10 text-center">
         <h2
           className="text-white mb-4"
           style={{ fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 800, lineHeight: 1.25 }}
