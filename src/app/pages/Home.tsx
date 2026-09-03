@@ -22,7 +22,8 @@ import { cities, FEATURED_CITY_SLUGS } from '../data/cities';
 import { SITE, YELP } from '../data/site';
 import { reviews } from '../data/reviews';
 
-const HERO_BG = 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=1600&q=70&fit=crop&auto=format';
+const HERO_VIDEO = '/video/hero.mp4';
+const HERO_POSTER = 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=1600&q=70&fit=crop&auto=format';
 const RESIDENTIAL_IMG = 'https://images.unsplash.com/photo-1628745277862-bc0b2d68c50c?w=700&h=500&q=70&fit=crop&auto=format';
 const COMMERCIAL_IMG = 'https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?w=700&h=500&q=70&fit=crop&auto=format';
 
@@ -153,13 +154,16 @@ export function Home() {
 
       {/* ─── Hero ─────────────────────────────────────────────── */}
       <section className="relative -mt-20 min-h-[680px] lg:min-h-[760px] flex items-center overflow-hidden">
-        <img
-          src={HERO_BG}
-          alt="Professional house cleaning team at work in a bright Kettering, MD home"
+        <video
           className="absolute inset-0 w-full h-full object-cover object-center"
-          width={1600}
-          height={900}
-          fetchPriority="high"
+          src={HERO_VIDEO}
+          poster={HERO_POSTER}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-label="Professional house cleaning team at work in a bright Kettering, MD home"
         />
 
         <div
