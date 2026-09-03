@@ -18,8 +18,28 @@ export function Footer() {
   const topAreas = cities.filter((c) => FEATURED_CITY_SLUGS.includes(c.slug));
 
   return (
-    <footer style={{ backgroundColor: '#143177' }}>
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-16">
+    <footer className="relative overflow-hidden" style={{ backgroundColor: '#143177' }}>
+      {/* Full-bleed background video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        src="/video/footer.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+      />
+      {/* Navy tint so the footer text stays legible over the video */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(20,49,119,0.92) 0%, rgba(20,49,119,0.86) 45%, rgba(11,25,66,0.94) 100%)',
+        }}
+      />
+
+      <div className="relative z-10 max-w-[1200px] mx-auto px-6 lg:px-10 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
