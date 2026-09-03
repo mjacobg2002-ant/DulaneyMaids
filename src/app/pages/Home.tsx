@@ -170,7 +170,7 @@ export function Home() {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(to right, rgba(11,18,38,0.82) 0%, rgba(11,18,38,0.72) 55%, rgba(11,18,38,0.45) 100%)',
+              'linear-gradient(to right, rgba(20,21,24,0.82) 0%, rgba(20,21,24,0.72) 55%, rgba(20,21,24,0.45) 100%)',
           }}
         />
 
@@ -217,7 +217,7 @@ export function Home() {
             >
               <Link
                 to="/contact"
-                style={{ backgroundColor: '#3E6EDC', fontWeight: 700 }}
+                style={{ backgroundColor: '#C6A15B', color: '#1E2126', fontWeight: 700 }}
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-white hover:opacity-90 transition-opacity"
               >
                 Get a Free Quote <ArrowRight size={17} />
@@ -253,16 +253,16 @@ export function Home() {
       </section>
 
       {/* ─── Choose Your Service ─────────────────────────────── */}
-      <section className="py-20 bg-[#F6F8FC]">
+      <section className="py-20 bg-[#FAF8F3]">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <motion.div className="text-center mb-12" {...motionProps()}>
             <h2
-              className="text-[#143177] mb-4"
+              className="text-[#1E2126] mb-4"
               style={{ fontSize: 'clamp(26px, 4vw, 38px)', fontWeight: 800 }}
             >
               Choose Your Service
             </h2>
-            <p className="text-[#374151] max-w-2xl mx-auto" style={{ fontSize: '17px', lineHeight: '1.7' }}>
+            <p className="text-[#4A4640] max-w-2xl mx-auto" style={{ fontSize: '17px', lineHeight: '1.7' }}>
               Whether your home needs immaculate care or your workplace demands consistent, professional
               maintenance — we deliver reliable results every time.
             </p>
@@ -272,10 +272,10 @@ export function Home() {
             {/* Residential */}
             <motion.div
               {...cardProps}
-              className="bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] hover:shadow-lg transition-shadow group"
+              className="bg-white rounded-2xl overflow-hidden border border-[#E8E1D3] hover:shadow-lg transition-shadow group"
               style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
             >
-              <div className="h-52 overflow-hidden bg-[#EEF1F7]">
+              <div className="h-52 overflow-hidden bg-[#F2ECDF]">
                 <img
                   src={RESIDENTIAL_IMG}
                   alt="Freshly cleaned residential kitchen — house cleaning in Prince George's County MD"
@@ -290,15 +290,15 @@ export function Home() {
                 <div className="flex items-center gap-3 mb-3">
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: '#EEF1F7', color: '#143177' }}
+                    style={{ backgroundColor: '#F2ECDF', color: '#1E2126' }}
                   >
                     <HomeIcon size={20} />
                   </div>
-                  <h3 style={{ fontSize: '20px', color: '#143177', fontWeight: 700 }}>
+                  <h3 style={{ fontSize: '20px', color: '#1E2126', fontWeight: 700 }}>
                     Residential Cleaning
                   </h3>
                 </div>
-                <p className="text-[#374151] mb-5 text-sm" style={{ lineHeight: '1.7' }}>
+                <p className="text-[#4A4640] mb-5 text-sm" style={{ lineHeight: '1.7' }}>
                   From routine upkeep to deep cleans, move-in/move-out, and post-construction — every
                   service tailored to your home.
                 </p>
@@ -309,7 +309,7 @@ export function Home() {
                     'Move-in / move-out cleaning',
                     'Post-construction cleanup',
                   ].map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-sm text-[#374151]">
+                    <li key={item} className="flex items-center gap-2 text-sm text-[#4A4640]">
                       <CheckCircle2 size={15} className="text-[#4C9961] flex-shrink-0" />
                       <span>{item}</span>
                     </li>
@@ -318,7 +318,7 @@ export function Home() {
                 <div className="flex gap-3">
                   <Link
                     to="/contact"
-                    style={{ backgroundColor: '#3E6EDC', fontWeight: 600 }}
+                    style={{ backgroundColor: '#C6A15B', color: '#1E2126', fontWeight: 600 }}
                     className="flex-1 text-center text-white text-sm px-4 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
                   >
                     Get a Free Quote
@@ -326,7 +326,7 @@ export function Home() {
                   <Link
                     to="/residential"
                     style={{ fontWeight: 600 }}
-                    className="flex-1 text-center text-[#143177] text-sm px-4 py-2.5 rounded-lg border border-[#E5E7EB] hover:bg-[#F6F8FC] transition-colors"
+                    className="flex-1 text-center text-[#1E2126] text-sm px-4 py-2.5 rounded-lg border border-[#E8E1D3] hover:bg-[#FAF8F3] transition-colors"
                   >
                     Learn More
                   </Link>
@@ -337,10 +337,10 @@ export function Home() {
             {/* Commercial */}
             <motion.div
               {...cardProps}
-              className="bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] hover:shadow-lg transition-shadow group"
+              className="bg-white rounded-2xl overflow-hidden border border-[#E8E1D3] hover:shadow-lg transition-shadow group"
               style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
             >
-              <div className="h-52 overflow-hidden bg-[#EEF1F7]">
+              <div className="h-52 overflow-hidden bg-[#F2ECDF]">
                 <img
                   src={COMMERCIAL_IMG}
                   alt="Clean professional office space — commercial cleaning in the DMV"
@@ -355,15 +355,15 @@ export function Home() {
                 <div className="flex items-center gap-3 mb-3">
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: '#EEF1F7', color: '#143177' }}
+                    style={{ backgroundColor: '#F2ECDF', color: '#1E2126' }}
                   >
                     <Building2 size={20} />
                   </div>
-                  <h3 style={{ fontSize: '20px', color: '#143177', fontWeight: 700 }}>
+                  <h3 style={{ fontSize: '20px', color: '#1E2126', fontWeight: 700 }}>
                     Commercial Cleaning
                   </h3>
                 </div>
-                <p className="text-[#374151] mb-5 text-sm" style={{ lineHeight: '1.7' }}>
+                <p className="text-[#4A4640] mb-5 text-sm" style={{ lineHeight: '1.7' }}>
                   Consistent, professional cleaning for offices, apartment communities, and facilities
                   across Prince George's County and the DMV.
                 </p>
@@ -374,7 +374,7 @@ export function Home() {
                     'Apartment & facility support',
                     'Assisted living environments',
                   ].map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-sm text-[#374151]">
+                    <li key={item} className="flex items-center gap-2 text-sm text-[#4A4640]">
                       <CheckCircle2 size={15} className="text-[#4C9961] flex-shrink-0" />
                       <span>{item}</span>
                     </li>
@@ -383,7 +383,7 @@ export function Home() {
                 <div className="flex gap-3">
                   <Link
                     to="/contact"
-                    style={{ backgroundColor: '#3E6EDC', fontWeight: 600 }}
+                    style={{ backgroundColor: '#C6A15B', color: '#1E2126', fontWeight: 600 }}
                     className="flex-1 text-center text-white text-sm px-4 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
                   >
                     Get a Free Quote
@@ -391,7 +391,7 @@ export function Home() {
                   <Link
                     to="/commercial"
                     style={{ fontWeight: 600 }}
-                    className="flex-1 text-center text-[#143177] text-sm px-4 py-2.5 rounded-lg border border-[#E5E7EB] hover:bg-[#F6F8FC] transition-colors"
+                    className="flex-1 text-center text-[#1E2126] text-sm px-4 py-2.5 rounded-lg border border-[#E8E1D3] hover:bg-[#FAF8F3] transition-colors"
                   >
                     Learn More
                   </Link>
@@ -407,12 +407,12 @@ export function Home() {
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <motion.div className="text-center mb-12" {...motionProps()}>
             <h2
-              className="text-[#143177] mb-4"
+              className="text-[#1E2126] mb-4"
               style={{ fontSize: 'clamp(26px, 4vw, 38px)', fontWeight: 800 }}
             >
               Why Kettering Trusts Dulaney Maids
             </h2>
-            <p className="text-[#374151] max-w-2xl mx-auto" style={{ fontSize: '17px', lineHeight: '1.7' }}>
+            <p className="text-[#4A4640] max-w-2xl mx-auto" style={{ fontSize: '17px', lineHeight: '1.7' }}>
               We hold ourselves to a higher standard — because your home or workplace deserves nothing less.
             </p>
           </motion.div>
@@ -422,18 +422,18 @@ export function Home() {
               <motion.div
                 key={p.title}
                 {...cardProps}
-                className="bg-[#F6F8FC] rounded-2xl p-6 border border-[#E5E7EB]"
+                className="bg-[#FAF8F3] rounded-2xl p-6 border border-[#E8E1D3]"
               >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                  style={{ backgroundColor: 'white', color: '#143177', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}
+                  style={{ backgroundColor: 'white', color: '#1E2126', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}
                 >
                   {p.icon}
                 </div>
-                <h3 className="text-[#143177] mb-2" style={{ fontSize: '16px', fontWeight: 700 }}>
+                <h3 className="text-[#1E2126] mb-2" style={{ fontSize: '16px', fontWeight: 700 }}>
                   {p.title}
                 </h3>
-                <p className="text-[#374151] text-sm" style={{ lineHeight: '1.65' }}>
+                <p className="text-[#4A4640] text-sm" style={{ lineHeight: '1.65' }}>
                   {p.text}
                 </p>
               </motion.div>
@@ -456,7 +456,7 @@ export function Home() {
           </p>
           <Link
             to="/contact"
-            className="flex-shrink-0 inline-flex items-center gap-1.5 text-sm text-[#143177] bg-white px-5 py-2.5 rounded-lg hover:bg-white/90 transition-colors"
+            className="flex-shrink-0 inline-flex items-center gap-1.5 text-sm text-[#1E2126] bg-white px-5 py-2.5 rounded-lg hover:bg-white/90 transition-colors"
             style={{ fontWeight: 700 }}
           >
             Get a Free Quote <ArrowRight size={14} />
@@ -465,16 +465,16 @@ export function Home() {
       </motion.section>
 
       {/* ─── How It Works ─────────────────────────────────────── */}
-      <section className="py-20 bg-[#F6F8FC]">
+      <section className="py-20 bg-[#FAF8F3]">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <motion.div className="text-center mb-12" {...motionProps()}>
             <h2
-              className="text-[#143177] mb-4"
+              className="text-[#1E2126] mb-4"
               style={{ fontSize: 'clamp(26px, 4vw, 38px)', fontWeight: 800 }}
             >
               How It Works
             </h2>
-            <p className="text-[#374151] max-w-xl mx-auto" style={{ fontSize: '17px', lineHeight: '1.7' }}>
+            <p className="text-[#4A4640] max-w-xl mx-auto" style={{ fontSize: '17px', lineHeight: '1.7' }}>
               From first contact to a spotless result — a simple, four-step process built around your schedule.
             </p>
           </motion.div>
@@ -484,18 +484,18 @@ export function Home() {
               <motion.div
                 key={s.num}
                 {...cardProps}
-                className="bg-white rounded-2xl p-6 border border-[#E5E7EB]"
+                className="bg-white rounded-2xl p-6 border border-[#E8E1D3]"
               >
                 <div
                   className="text-sm mb-4"
-                  style={{ color: '#3E6EDC', fontWeight: 800, letterSpacing: '0.04em' }}
+                  style={{ color: '#8A6D3B', fontWeight: 800, letterSpacing: '0.04em' }}
                 >
                   {s.num}
                 </div>
-                <h3 className="text-[#143177] mb-2" style={{ fontSize: '16px', fontWeight: 700 }}>
+                <h3 className="text-[#1E2126] mb-2" style={{ fontSize: '16px', fontWeight: 700 }}>
                   {s.title}
                 </h3>
-                <p className="text-[#374151] text-sm" style={{ lineHeight: '1.65' }}>
+                <p className="text-[#4A4640] text-sm" style={{ lineHeight: '1.65' }}>
                   {s.text}
                 </p>
               </motion.div>
@@ -510,17 +510,17 @@ export function Home() {
           <div className="grid lg:grid-cols-5 gap-10 items-center">
             <motion.div className="lg:col-span-2" {...motionProps()}>
               <h2
-                className="text-[#143177] mb-4"
+                className="text-[#1E2126] mb-4"
                 style={{ fontSize: 'clamp(26px, 4vw, 38px)', fontWeight: 800 }}
               >
                 Rated <span className="hl-streak">{YELP.ratingDisplay}</span> on Yelp
               </h2>
               <div className="flex gap-1 mb-4" aria-label={`${YELP.ratingDisplay} out of 5 stars`}>
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} size={22} className="text-[#F7D156] fill-[#F7D156]" />
+                  <Star key={i} size={22} className="text-[#C6A15B] fill-[#C6A15B]" />
                 ))}
               </div>
-              <p className="text-[#374151] mb-6" style={{ fontSize: '17px', lineHeight: '1.7' }}>
+              <p className="text-[#4A4640] mb-6" style={{ fontSize: '17px', lineHeight: '1.7' }}>
                 Real feedback from real clients in the Kettering area — and the standard we hold
                 ourselves to on every job.
               </p>
@@ -530,13 +530,13 @@ export function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-sm text-white px-5 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
-                  style={{ backgroundColor: '#3E6EDC', fontWeight: 600 }}
+                  style={{ backgroundColor: '#C6A15B', color: '#1E2126', fontWeight: 600 }}
                 >
                   Read our Yelp reviews <ExternalLink size={13} />
                 </a>
                 <Link
                   to="/reviews"
-                  className="inline-flex items-center gap-1.5 text-sm text-[#143177] px-5 py-2.5 rounded-lg border border-[#E5E7EB] hover:bg-[#F6F8FC] transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm text-[#1E2126] px-5 py-2.5 rounded-lg border border-[#E8E1D3] hover:bg-[#FAF8F3] transition-colors"
                   style={{ fontWeight: 600 }}
                 >
                   See all reviews <ArrowRight size={13} />
@@ -546,32 +546,32 @@ export function Home() {
 
             <motion.div className="lg:col-span-3" {...motionProps(0.15)}>
               <figure
-                className="bg-[#F6F8FC] rounded-2xl p-8 lg:p-10 border border-[#E5E7EB]"
+                className="bg-[#FAF8F3] rounded-2xl p-8 lg:p-10 border border-[#E8E1D3]"
                 style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.05)' }}
               >
                 <div className="flex gap-0.5 mb-5" aria-hidden="true">
                   {Array.from({ length: featuredReview.rating }).map((_, i) => (
-                    <Star key={i} size={16} className="text-[#F7D156] fill-[#F7D156]" />
+                    <Star key={i} size={16} className="text-[#C6A15B] fill-[#C6A15B]" />
                   ))}
                 </div>
                 <blockquote
-                  className="text-[#143177] mb-6"
+                  className="text-[#1E2126] mb-6"
                   style={{ fontSize: 'clamp(16px, 2vw, 19px)', lineHeight: 1.65, fontWeight: 500 }}
                 >
                   "{featuredReview.quote}"
                 </blockquote>
                 <figcaption className="flex items-center justify-between flex-wrap gap-3">
                   <div>
-                    <p className="text-[#111827] text-sm" style={{ fontWeight: 700 }}>
+                    <p className="text-[#1E2126] text-sm" style={{ fontWeight: 700 }}>
                       {featuredReview.name}
                     </p>
-                    <p className="text-[#6B7280] text-xs mt-0.5">
+                    <p className="text-[#6B6458] text-xs mt-0.5">
                       {featuredReview.location} · via {featuredReview.source}
                     </p>
                   </div>
                   <span
                     className="text-xs px-3 py-1.5 rounded-full"
-                    style={{ backgroundColor: '#EEF1F7', color: '#143177', fontWeight: 600 }}
+                    style={{ backgroundColor: '#F2ECDF', color: '#1E2126', fontWeight: 600 }}
                   >
                     {featuredReview.service}
                   </span>
@@ -583,7 +583,7 @@ export function Home() {
       </section>
 
       {/* ─── Service Areas Preview ────────────────────────────── */}
-      <section className="py-20 bg-[#F6F8FC]">
+      <section className="py-20 bg-[#FAF8F3]">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <motion.div
             className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10"
@@ -591,18 +591,18 @@ export function Home() {
           >
             <div>
               <h2
-                className="text-[#143177] mb-2"
+                className="text-[#1E2126] mb-2"
                 style={{ fontSize: 'clamp(26px, 4vw, 38px)', fontWeight: 800 }}
               >
                 Proudly Serving Kettering & the DMV
               </h2>
-              <p className="text-[#374151]" style={{ fontSize: '17px', lineHeight: '1.7' }}>
+              <p className="text-[#4A4640]" style={{ fontSize: '17px', lineHeight: '1.7' }}>
                 Based in Kettering, MD — serving Prince George's County, Washington DC, and Northern Virginia.
               </p>
             </div>
             <Link
               to="/service-areas"
-              style={{ fontWeight: 600, color: '#3E6EDC', whiteSpace: 'nowrap' }}
+              style={{ fontWeight: 600, color: '#8A6D3B', whiteSpace: 'nowrap' }}
               className="flex items-center gap-1.5 text-sm hover:opacity-80 transition-opacity"
             >
               View all areas <ArrowRight size={15} />
@@ -617,19 +617,19 @@ export function Home() {
               <motion.div key={city.slug} {...cardProps}>
                 <Link
                   to={`/service-areas/${city.slug}`}
-                  className="block bg-white rounded-xl p-4 border border-[#E5E7EB] hover:border-[#3E6EDC] transition-all text-center group"
+                  className="block bg-white rounded-xl p-4 border border-[#E8E1D3] hover:border-[#C6A15B] transition-all text-center group"
                 >
                   <MapPin
                     size={18}
-                    className="mx-auto mb-2 text-[#3E6EDC] group-hover:text-[#143177] transition-colors"
+                    className="mx-auto mb-2 text-[#8A6D3B] group-hover:text-[#1E2126] transition-colors"
                   />
                   <p
-                    className="text-[#143177] text-sm"
+                    className="text-[#1E2126] text-sm"
                     style={{ fontWeight: 700, lineHeight: 1.3 }}
                   >
                     {city.name}
                   </p>
-                  <p className="text-[#6B7280] text-xs mt-0.5">{city.state}</p>
+                  <p className="text-[#6B6458] text-xs mt-0.5">{city.state}</p>
                 </Link>
               </motion.div>
             ))}
@@ -643,18 +643,18 @@ export function Home() {
           <div className="grid lg:grid-cols-5 gap-12 items-start">
             <motion.div className="lg:col-span-2" {...motionProps()}>
               <h2
-                className="text-[#143177] mb-4"
+                className="text-[#1E2126] mb-4"
                 style={{ fontSize: 'clamp(26px, 4vw, 38px)', fontWeight: 800 }}
               >
                 Frequently Asked Questions
               </h2>
-              <p className="text-[#374151] mb-6" style={{ fontSize: '17px', lineHeight: '1.7' }}>
+              <p className="text-[#4A4640] mb-6" style={{ fontSize: '17px', lineHeight: '1.7' }}>
                 Questions about quotes, service areas, supplies, or our standards? We've answered
                 the most common ones here.
               </p>
               <Link
                 to="/faq"
-                style={{ fontWeight: 600, color: '#3E6EDC' }}
+                style={{ fontWeight: 600, color: '#8A6D3B' }}
                 className="text-sm hover:opacity-80 transition-opacity inline-flex items-center gap-1.5"
               >
                 View all FAQs <ArrowRight size={14} />
@@ -662,7 +662,7 @@ export function Home() {
             </motion.div>
 
             <motion.div
-              className="lg:col-span-3 flex flex-col divide-y divide-[#E5E7EB]"
+              className="lg:col-span-3 flex flex-col divide-y divide-[#E8E1D3]"
               {...motionProps(0.15)}
             >
               {faqItems.map((item, idx) => (
@@ -672,7 +672,7 @@ export function Home() {
                     aria-expanded={openFaq === idx}
                     className="w-full flex items-center justify-between gap-4 text-left"
                   >
-                    <span className="text-[#143177] text-sm" style={{ fontWeight: 600 }}>
+                    <span className="text-[#1E2126] text-sm" style={{ fontWeight: 600 }}>
                       {item.question}
                     </span>
                     <motion.span
@@ -680,7 +680,7 @@ export function Home() {
                       transition={{ duration: 0.25, ease: EASE }}
                       className="flex-shrink-0"
                     >
-                      <ChevronDown size={16} className="text-[#3E6EDC]" />
+                      <ChevronDown size={16} className="text-[#8A6D3B]" />
                     </motion.span>
                   </button>
                   <AnimatePresence initial={false}>
@@ -693,7 +693,7 @@ export function Home() {
                         transition={{ duration: 0.28, ease: EASE }}
                         style={{ overflow: 'hidden' }}
                       >
-                        <p className="mt-3 text-sm text-[#374151]" style={{ lineHeight: '1.7' }}>
+                        <p className="mt-3 text-sm text-[#4A4640]" style={{ lineHeight: '1.7' }}>
                           {item.answer}
                         </p>
                       </motion.div>

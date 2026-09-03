@@ -17,9 +17,9 @@ export function Footer() {
   const linkStyle: React.CSSProperties = { color: 'rgba(255,255,255,0.65)', fontWeight: 400 };
   const topAreas = cities.filter((c) => FEATURED_CITY_SLUGS.includes(c.slug));
 
+  // Extra bottom padding on mobile keeps the footer clear of the sticky CTA bar
   return (
-    {/* Extra bottom padding on mobile keeps the footer clear of the sticky CTA bar */}
-    <footer className="pb-14 lg:pb-0" style={{ backgroundColor: '#143177' }}>
+    <footer className="pb-14 lg:pb-0" style={{ backgroundColor: '#1E2126' }}>
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
@@ -46,7 +46,7 @@ export function Footer() {
             >
               <span className="flex gap-0.5" aria-hidden="true">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} size={12} className="text-[#F7D156] fill-[#F7D156]" />
+                  <Star key={i} size={12} className="text-[#C6A15B] fill-[#C6A15B]" />
                 ))}
               </span>
               {YELP.ratingDisplay} on Yelp <ExternalLink size={12} />
@@ -96,7 +96,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 mt-4 text-sm hover:text-white transition-colors"
-              style={{ color: '#F7D156', fontWeight: 600 }}
+              style={{ color: '#C6A15B', fontWeight: 600 }}
             >
               Leave us a review on Yelp <ExternalLink size={12} />
             </a>
@@ -139,7 +139,7 @@ export function Footer() {
             </ul>
             <Link
               to="/contact"
-              style={{ backgroundColor: '#3E6EDC', fontWeight: 600 }}
+              style={{ backgroundColor: '#C6A15B', color: '#1E2126', fontWeight: 600 }}
               className="inline-flex items-center justify-center mt-6 px-5 py-2.5 rounded-lg text-white text-sm hover:opacity-90 transition-opacity w-full text-center"
             >
               Get a Free Quote

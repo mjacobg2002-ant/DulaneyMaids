@@ -111,7 +111,7 @@ export function Commercial() {
       />
 
       {/* ─── Hero ────────────────────────────────────────────── */}
-      <section className="relative bg-[#143177]">
+      <section className="relative bg-[#1E2126]">
         <img
           src={HERO_IMG}
           alt="Professionally cleaned modern office — commercial cleaning in Prince George's County MD"
@@ -122,7 +122,7 @@ export function Commercial() {
         />
         <div className="relative max-w-[1200px] mx-auto px-6 lg:px-10 py-20 lg:py-24">
           <motion.p
-            className="text-[#F7D156] text-xs mb-3"
+            className="text-[#C6A15B] text-xs mb-3"
             style={{ fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}
             initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -159,7 +159,7 @@ export function Commercial() {
           >
             <Link
               to="/contact"
-              style={{ backgroundColor: '#3E6EDC', fontWeight: 700 }}
+              style={{ backgroundColor: '#C6A15B', color: '#1E2126', fontWeight: 700 }}
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-white hover:opacity-90 transition-opacity"
             >
               Get a Free Quote <ArrowRight size={17} />
@@ -178,12 +178,12 @@ export function Commercial() {
 
       {/* ─── Client Types ─────────────────────────────────────── */}
       <motion.section
-        className="py-10 bg-[#F6F8FC] border-b border-[#E5E7EB]"
+        className="py-10 bg-[#FAF8F3] border-b border-[#E8E1D3]"
         {...inView()}
       >
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="text-sm text-[#6B7280] mr-2" style={{ fontWeight: 600 }}>We serve:</span>
+            <span className="text-sm text-[#6B6458] mr-2" style={{ fontWeight: 600 }}>We serve:</span>
             {[
               'Apartment Communities',
               'Office Buildings',
@@ -194,7 +194,7 @@ export function Commercial() {
             ].map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center bg-white border border-[#E5E7EB] rounded-full px-3 py-1.5 text-sm text-[#374151]"
+                className="inline-flex items-center bg-white border border-[#E8E1D3] rounded-full px-3 py-1.5 text-sm text-[#4A4640]"
                 style={{ fontWeight: 500 }}
               >
                 {label}
@@ -209,12 +209,12 @@ export function Commercial() {
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <motion.div className="text-center mb-14" {...inView()}>
             <h2
-              className="text-[#143177] mb-4"
+              className="text-[#1E2126] mb-4"
               style={{ fontSize: 'clamp(26px, 4vw, 38px)', fontWeight: 800 }}
             >
               Our Commercial Cleaning Solutions
             </h2>
-            <p className="text-[#374151] max-w-2xl mx-auto" style={{ fontSize: '17px', lineHeight: '1.7' }}>
+            <p className="text-[#4A4640] max-w-2xl mx-auto" style={{ fontSize: '17px', lineHeight: '1.7' }}>
               From daily upkeep to specialized facility programs — we deliver consistent, professional service
               tailored to your property and schedule.
             </p>
@@ -226,18 +226,18 @@ export function Commercial() {
                 key={s.id}
                 id={s.id}
                 {...card}
-                className="bg-[#F6F8FC] rounded-2xl p-8 border border-[#E5E7EB] flex flex-col"
+                className="bg-[#FAF8F3] rounded-2xl p-8 border border-[#E8E1D3] flex flex-col"
               >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 flex-shrink-0"
-                  style={{ backgroundColor: '#EEF1F7', color: '#143177' }}
+                  style={{ backgroundColor: '#F2ECDF', color: '#1E2126' }}
                 >
                   {s.icon}
                 </div>
-                <h3 className="text-[#143177] mb-3" style={{ fontSize: '19px', fontWeight: 800 }}>
+                <h3 className="text-[#1E2126] mb-3" style={{ fontSize: '19px', fontWeight: 800 }}>
                   {s.title}
                 </h3>
-                <p className="text-[#374151] flex-1" style={{ fontSize: '15px', lineHeight: '1.75' }}>
+                <p className="text-[#4A4640] flex-1" style={{ fontSize: '15px', lineHeight: '1.75' }}>
                   {s.desc}
                 </p>
               </motion.div>
@@ -247,7 +247,7 @@ export function Commercial() {
           <motion.div className="text-center mt-12" {...inView()}>
             <Link
               to="/contact"
-              style={{ backgroundColor: '#3E6EDC', fontWeight: 700 }}
+              style={{ backgroundColor: '#C6A15B', color: '#1E2126', fontWeight: 700 }}
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg text-white hover:opacity-90 transition-opacity"
             >
               Request a Free Custom Quote <ArrowRight size={17} />
@@ -257,10 +257,10 @@ export function Commercial() {
       </section>
 
       {/* ─── Internal Links ────────────────────────────────────── */}
-      <section className="py-16 bg-[#F6F8FC]">
+      <section className="py-16 bg-[#FAF8F3]">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <motion.h2
-            className="text-[#143177] mb-6"
+            className="text-[#1E2126] mb-6"
             style={{ fontSize: '22px', fontWeight: 800 }}
             {...inView()}
           >
@@ -271,15 +271,15 @@ export function Commercial() {
               <motion.div key={city.slug} {...card}>
                 <Link
                   to={`/service-areas/${city.slug}`}
-                  className="flex items-center justify-between bg-white rounded-xl px-5 py-3.5 border border-[#E5E7EB] hover:border-[#3E6EDC] transition-colors group"
+                  className="flex items-center justify-between bg-white rounded-xl px-5 py-3.5 border border-[#E8E1D3] hover:border-[#C6A15B] transition-colors group"
                 >
                   <span
-                    className="text-[#374151] text-sm group-hover:text-[#143177] transition-colors"
+                    className="text-[#4A4640] text-sm group-hover:text-[#1E2126] transition-colors"
                     style={{ fontWeight: 500 }}
                   >
                     Commercial Cleaning in {city.name}, {city.state}
                   </span>
-                  <ArrowRight size={14} className="text-[#3E6EDC] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <ArrowRight size={14} className="text-[#8A6D3B] opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </motion.div>
             ))}

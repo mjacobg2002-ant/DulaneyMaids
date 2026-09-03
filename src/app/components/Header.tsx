@@ -38,8 +38,8 @@ export function Header() {
     `transition-colors duration-300 text-sm ${
       scrolled
         ? isActive
-          ? 'text-[#143177]'
-          : 'text-[#374151] hover:text-[#143177]'
+          ? 'text-[#1E2126]'
+          : 'text-[#4A4640] hover:text-[#1E2126]'
         : isActive
         ? 'text-white'
         : 'text-white/85 hover:text-white'
@@ -49,7 +49,7 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white border-b border-[#E5E7EB]'
+          ? 'bg-white border-b border-[#E8E1D3]'
           : 'bg-transparent border-b border-transparent'
       }`}
       style={scrolled ? { boxShadow: '0 1px 8px rgba(0,0,0,0.08)' } : {}}
@@ -83,7 +83,7 @@ export function Header() {
                 onFocus={handleServicesEnter}
                 onClick={() => setServicesOpen((v) => !v)}
                 className={`flex items-center gap-1 text-sm transition-colors duration-300 ${
-                  scrolled ? 'text-[#374151] hover:text-[#143177]' : 'text-white/85 hover:text-white'
+                  scrolled ? 'text-[#4A4640] hover:text-[#1E2126]' : 'text-white/85 hover:text-white'
                 }`}
                 style={{ fontWeight: 500 }}
               >
@@ -95,7 +95,7 @@ export function Header() {
               </button>
               {servicesOpen && (
                 <div
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white rounded-xl border border-[#E5E7EB] py-2"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white rounded-xl border border-[#E8E1D3] py-2"
                   style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.12)' }}
                 >
                   {[
@@ -105,7 +105,7 @@ export function Header() {
                     <Link
                       key={to}
                       to={to}
-                      className="block px-5 py-2.5 text-sm text-[#374151] hover:bg-[#F6F8FC] hover:text-[#143177] transition-colors"
+                      className="block px-5 py-2.5 text-sm text-[#4A4640] hover:bg-[#FAF8F3] hover:text-[#1E2126] transition-colors"
                       style={{ fontWeight: 500 }}
                       onClick={() => setServicesOpen(false)}
                     >
@@ -128,7 +128,7 @@ export function Header() {
             <a
               href={`tel:${SITE.phoneTel}`}
               className={`hidden xl:inline-flex items-center gap-2 text-sm transition-colors duration-300 ${
-                scrolled ? 'text-[#143177] hover:text-[#3E6EDC]' : 'text-white hover:text-white/80'
+                scrolled ? 'text-[#1E2126] hover:text-[#8A6D3B]' : 'text-white hover:text-white/80'
               }`}
               style={{ fontWeight: 700 }}
             >
@@ -139,15 +139,15 @@ export function Header() {
               className="hidden lg:inline-flex items-center px-5 py-2.5 rounded-lg text-sm transition-all duration-300"
               style={{
                 fontWeight: 600,
-                backgroundColor: scrolled ? '#3E6EDC' : 'transparent',
-                color: 'white',
+                backgroundColor: scrolled ? '#C6A15B' : 'transparent',
+                color: scrolled ? '#1E2126' : 'white',
                 border: scrolled ? 'none' : '1.5px solid rgba(255,255,255,0.6)',
               }}
             >
               Get a Free Quote
             </Link>
             <button
-              className={`lg:hidden p-1 transition-colors duration-300 ${scrolled ? 'text-[#374151]' : 'text-white'}`}
+              className={`lg:hidden p-1 transition-colors duration-300 ${scrolled ? 'text-[#4A4640]' : 'text-white'}`}
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label={mobileOpen ? 'Close navigation' : 'Open navigation'}
               aria-expanded={mobileOpen}
@@ -162,8 +162,8 @@ export function Header() {
           <div
             className="lg:hidden border-t py-4 flex flex-col gap-1"
             style={{
-              borderColor: scrolled ? '#E5E7EB' : 'rgba(255,255,255,0.2)',
-              backgroundColor: scrolled ? 'white' : 'rgba(11,18,38,0.92)',
+              borderColor: scrolled ? '#E8E1D3' : 'rgba(255,255,255,0.2)',
+              backgroundColor: scrolled ? 'white' : 'rgba(20,21,24,0.92)',
               fontWeight: 500,
             }}
           >
@@ -182,7 +182,7 @@ export function Header() {
                 onClick={() => setMobileOpen(false)}
                 className={`px-4 py-2.5 text-sm rounded-lg transition-colors ${
                   scrolled
-                    ? 'text-[#374151] hover:bg-[#F6F8FC] hover:text-[#143177]'
+                    ? 'text-[#4A4640] hover:bg-[#FAF8F3] hover:text-[#1E2126]'
                     : 'text-white/85 hover:text-white hover:bg-white/10'
                 }`}
               >
@@ -193,7 +193,7 @@ export function Header() {
               href={`tel:${SITE.phoneTel}`}
               className={`mt-1 flex items-center justify-center gap-2 text-sm px-5 py-3 rounded-lg border transition-colors ${
                 scrolled
-                  ? 'border-[#E5E7EB] text-[#143177] hover:bg-[#F6F8FC]'
+                  ? 'border-[#E8E1D3] text-[#1E2126] hover:bg-[#FAF8F3]'
                   : 'border-white/30 text-white hover:bg-white/10'
               }`}
               style={{ fontWeight: 700 }}
@@ -203,7 +203,7 @@ export function Header() {
             <Link
               to="/contact"
               onClick={() => setMobileOpen(false)}
-              style={{ backgroundColor: '#3E6EDC', fontWeight: 600 }}
+              style={{ backgroundColor: '#C6A15B', color: '#1E2126', fontWeight: 600 }}
               className="mt-2 text-center text-sm text-white px-5 py-3 rounded-lg hover:opacity-90 transition-opacity"
             >
               Get a Free Quote

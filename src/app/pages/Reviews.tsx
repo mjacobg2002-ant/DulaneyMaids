@@ -16,7 +16,7 @@ function StarRating({ rating, size = 14 }: { rating: number; size?: number }) {
   return (
     <div className="flex gap-0.5" aria-label={`${rating} out of 5 stars`}>
       {Array.from({ length: rating }).map((_, i) => (
-        <Star key={i} size={size} className="text-[#F7D156] fill-[#F7D156]" />
+        <Star key={i} size={size} className="text-[#C6A15B] fill-[#C6A15B]" />
       ))}
     </div>
   );
@@ -61,10 +61,10 @@ export function Reviews() {
       />
 
       {/* ─── Hero ────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: '#143177' }} className="py-20 lg:py-24">
+      <section style={{ backgroundColor: '#1E2126' }} className="py-20 lg:py-24">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <motion.p
-            className="text-[#F7D156] text-xs mb-3"
+            className="text-[#C6A15B] text-xs mb-3"
             style={{ fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}
             initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -95,29 +95,29 @@ export function Reviews() {
       </section>
 
       {/* ─── Aggregate + Reviews ─────────────────────────────── */}
-      <section className="py-20 bg-[#F6F8FC]">
+      <section className="py-20 bg-[#FAF8F3]">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-3 gap-8 items-start">
             {/* Aggregate card */}
             <motion.div
               {...inView()}
-              className="bg-white rounded-2xl p-8 border border-[#E5E7EB] text-center lg:sticky lg:top-28"
+              className="bg-white rounded-2xl p-8 border border-[#E8E1D3] text-center lg:sticky lg:top-28"
               style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.06)' }}
             >
-              <p className="text-[#143177]" style={{ fontSize: '56px', fontWeight: 800, lineHeight: 1 }}>
+              <p className="text-[#1E2126]" style={{ fontSize: '56px', fontWeight: 800, lineHeight: 1 }}>
                 {YELP.ratingDisplay}
               </p>
               <div className="flex justify-center my-4">
                 <StarRating rating={5} size={22} />
               </div>
-              <p className="text-[#6B7280] text-sm mb-6">Aggregate rating on Yelp</p>
+              <p className="text-[#6B6458] text-sm mb-6">Aggregate rating on Yelp</p>
               <div className="flex flex-col gap-3">
                 <a
                   href={YELP.profileUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 text-sm text-white px-5 py-3 rounded-lg hover:opacity-90 transition-opacity"
-                  style={{ backgroundColor: '#3E6EDC', fontWeight: 600 }}
+                  style={{ backgroundColor: '#C6A15B', color: '#1E2126', fontWeight: 600 }}
                 >
                   Read our Yelp reviews <ExternalLink size={13} />
                 </a>
@@ -125,13 +125,13 @@ export function Reviews() {
                   href={YELP.writeReviewUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 text-sm text-[#143177] px-5 py-3 rounded-lg border border-[#E5E7EB] hover:bg-[#F6F8FC] transition-colors"
+                  className="inline-flex items-center justify-center gap-2 text-sm text-[#1E2126] px-5 py-3 rounded-lg border border-[#E8E1D3] hover:bg-[#FAF8F3] transition-colors"
                   style={{ fontWeight: 600 }}
                 >
                   <PenLine size={14} /> Leave us a review on Yelp
                 </a>
               </div>
-              <div className="mt-6 pt-6 border-t border-[#E5E7EB] flex items-center justify-center gap-2 text-xs text-[#6B7280]">
+              <div className="mt-6 pt-6 border-t border-[#E8E1D3] flex items-center justify-center gap-2 text-xs text-[#6B6458]">
                 <ShieldCheck size={14} className="text-[#4C9961]" />
                 Verified reviews only — no paid or fabricated testimonials
               </div>
@@ -143,28 +143,28 @@ export function Reviews() {
                 <motion.figure
                   key={t.quote}
                   {...card}
-                  className="bg-white rounded-2xl p-8 border border-[#E5E7EB] flex flex-col"
+                  className="bg-white rounded-2xl p-8 border border-[#E8E1D3] flex flex-col"
                   style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.05)' }}
                 >
                   <StarRating rating={t.rating} />
                   <blockquote
-                    className="text-[#143177] my-5 flex-1"
+                    className="text-[#1E2126] my-5 flex-1"
                     style={{ fontSize: '17px', lineHeight: '1.7', fontWeight: 500 }}
                   >
                     "{t.quote}"
                   </blockquote>
-                  <figcaption className="flex items-center justify-between flex-wrap gap-3 pt-4 border-t border-[#E5E7EB]">
+                  <figcaption className="flex items-center justify-between flex-wrap gap-3 pt-4 border-t border-[#E8E1D3]">
                     <div>
-                      <p className="text-[#111827] text-sm" style={{ fontWeight: 700 }}>
+                      <p className="text-[#1E2126] text-sm" style={{ fontWeight: 700 }}>
                         {t.name}
                       </p>
-                      <p className="text-[#6B7280] text-xs mt-0.5">
+                      <p className="text-[#6B6458] text-xs mt-0.5">
                         {t.location} · via {t.source}
                       </p>
                     </div>
                     <span
-                      className="text-xs px-2.5 py-1 rounded-full border border-[#E5E7EB]"
-                      style={{ backgroundColor: '#EEF1F7', color: '#143177', fontWeight: 600 }}
+                      className="text-xs px-2.5 py-1 rounded-full border border-[#E8E1D3]"
+                      style={{ backgroundColor: '#F2ECDF', color: '#1E2126', fontWeight: 600 }}
                     >
                       {t.service}
                     </span>
@@ -175,12 +175,12 @@ export function Reviews() {
               {/* Invitation card */}
               <motion.div
                 {...card}
-                className="rounded-2xl p-8 border border-dashed border-[#3E6EDC]/40 bg-white/60 text-center"
+                className="rounded-2xl p-8 border border-dashed border-[#C6A15B]/40 bg-white/60 text-center"
               >
-                <p className="text-[#143177] mb-2" style={{ fontSize: '16px', fontWeight: 700 }}>
+                <p className="text-[#1E2126] mb-2" style={{ fontSize: '16px', fontWeight: 700 }}>
                   Worked with us recently?
                 </p>
-                <p className="text-[#374151] text-sm mb-5" style={{ lineHeight: '1.7' }}>
+                <p className="text-[#4A4640] text-sm mb-5" style={{ lineHeight: '1.7' }}>
                   Your feedback helps neighbors in Kettering and across the DMV find a cleaning team
                   they can trust — and it means the world to ours.
                 </p>
@@ -189,7 +189,7 @@ export function Reviews() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-white px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
-                  style={{ backgroundColor: '#3E6EDC', fontWeight: 600 }}
+                  style={{ backgroundColor: '#C6A15B', color: '#1E2126', fontWeight: 600 }}
                 >
                   <PenLine size={14} /> Share your experience on Yelp
                 </a>

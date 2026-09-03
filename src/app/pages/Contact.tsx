@@ -90,9 +90,9 @@ export function Contact() {
   };
 
   const inputClass =
-    'w-full bg-white border border-[#E5E7EB] rounded-xl px-4 py-3 text-sm text-[#111827] placeholder-[#9CA3AF] focus:outline-none focus:border-[#3E6EDC] focus:ring-2 focus:ring-[#3E6EDC]/10 transition-all';
+    'w-full bg-white border border-[#E8E1D3] rounded-xl px-4 py-3 text-sm text-[#1E2126] placeholder-[#A69C8C] focus:outline-none focus:border-[#C6A15B] focus:ring-2 focus:ring-[#C6A15B]/10 transition-all';
 
-  const labelClass = 'block text-xs text-[#374151] mb-1.5';
+  const labelClass = 'block text-xs text-[#4A4640] mb-1.5';
 
   return (
     <div>
@@ -103,10 +103,10 @@ export function Contact() {
       />
 
       {/* ─── Hero ────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: '#143177' }} className="py-20 lg:py-24">
+      <section style={{ backgroundColor: '#1E2126' }} className="py-20 lg:py-24">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <p
-            className="text-[#F7D156] text-xs mb-3"
+            className="text-[#C6A15B] text-xs mb-3"
             style={{ fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}
           >
             Get in Touch
@@ -135,14 +135,14 @@ export function Contact() {
       </section>
 
       {/* ─── Contact Grid ─────────────────────────────────────── */}
-      <section className="py-20 bg-[#F6F8FC]">
+      <section className="py-20 bg-[#FAF8F3]">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Contact Info */}
             <div className="lg:col-span-2 flex flex-col gap-8">
               <div>
                 <h2
-                  className="text-[#143177] mb-6"
+                  className="text-[#1E2126] mb-6"
                   style={{ fontSize: 'clamp(22px, 3vw, 28px)', fontWeight: 800 }}
                 >
                   Contact Information
@@ -151,14 +151,14 @@ export function Contact() {
                   <a href={`tel:${SITE.phoneTel}`} className="flex items-start gap-4 group">
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
-                      style={{ backgroundColor: '#EEF1F7', color: '#143177' }}
+                      style={{ backgroundColor: '#F2ECDF', color: '#1E2126' }}
                     >
                       <Phone size={18} />
                     </div>
                     <div>
-                      <p className="text-xs text-[#6B7280] mb-0.5" style={{ fontWeight: 600 }}>PHONE — TAP TO CALL</p>
+                      <p className="text-xs text-[#6B6458] mb-0.5" style={{ fontWeight: 600 }}>PHONE — TAP TO CALL</p>
                       <p
-                        className="text-sm text-[#143177] group-hover:text-[#3E6EDC] transition-colors"
+                        className="text-sm text-[#1E2126] group-hover:text-[#8A6D3B] transition-colors"
                         style={{ fontWeight: 700 }}
                       >
                         {SITE.phoneDisplay}
@@ -169,14 +169,14 @@ export function Contact() {
                   <a href={`mailto:${SITE.email}`} className="flex items-start gap-4 group">
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
-                      style={{ backgroundColor: '#EEF1F7', color: '#143177' }}
+                      style={{ backgroundColor: '#F2ECDF', color: '#1E2126' }}
                     >
                       <Mail size={18} />
                     </div>
                     <div>
-                      <p className="text-xs text-[#6B7280] mb-0.5" style={{ fontWeight: 600 }}>EMAIL</p>
+                      <p className="text-xs text-[#6B6458] mb-0.5" style={{ fontWeight: 600 }}>EMAIL</p>
                       <p
-                        className="text-sm text-[#143177] group-hover:text-[#3E6EDC] transition-colors"
+                        className="text-sm text-[#1E2126] group-hover:text-[#8A6D3B] transition-colors"
                         style={{ fontWeight: 600 }}
                       >
                         {SITE.email}
@@ -187,14 +187,14 @@ export function Contact() {
                   <div className="flex items-start gap-4">
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
-                      style={{ backgroundColor: '#EEF1F7', color: '#143177' }}
+                      style={{ backgroundColor: '#F2ECDF', color: '#1E2126' }}
                     >
                       <Clock size={18} />
                     </div>
                     <div>
-                      <p className="text-xs text-[#6B7280] mb-0.5" style={{ fontWeight: 600 }}>BUSINESS HOURS</p>
+                      <p className="text-xs text-[#6B6458] mb-0.5" style={{ fontWeight: 600 }}>BUSINESS HOURS</p>
                       {SITE.hours.map((line) => (
-                        <p key={line} className="text-sm text-[#374151]">{line}</p>
+                        <p key={line} className="text-sm text-[#4A4640]">{line}</p>
                       ))}
                     </div>
                   </div>
@@ -202,29 +202,29 @@ export function Contact() {
                   <div className="flex items-start gap-4">
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
-                      style={{ backgroundColor: '#EEF1F7', color: '#143177' }}
+                      style={{ backgroundColor: '#F2ECDF', color: '#1E2126' }}
                     >
                       <MapPin size={18} />
                     </div>
                     <div>
-                      <p className="text-xs text-[#6B7280] mb-0.5" style={{ fontWeight: 600 }}>SERVICE AREA</p>
-                      <p className="text-sm text-[#374151]">Kettering & Prince George's County, MD</p>
-                      <p className="text-sm text-[#374151]">Washington, DC</p>
-                      <p className="text-sm text-[#374151]">Northern Virginia & Montgomery County</p>
+                      <p className="text-xs text-[#6B6458] mb-0.5" style={{ fontWeight: 600 }}>SERVICE AREA</p>
+                      <p className="text-sm text-[#4A4640]">Kettering & Prince George's County, MD</p>
+                      <p className="text-sm text-[#4A4640]">Washington, DC</p>
+                      <p className="text-sm text-[#4A4640]">Northern Virginia & Montgomery County</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 border border-[#E5E7EB]">
-                <p className="text-[#143177] mb-2" style={{ fontSize: '15px', fontWeight: 700 }}>
+              <div className="bg-white rounded-2xl p-6 border border-[#E8E1D3]">
+                <p className="text-[#1E2126] mb-2" style={{ fontSize: '15px', fontWeight: 700 }}>
                   In a hurry?
                 </p>
-                <p className="text-sm text-[#374151]" style={{ lineHeight: '1.65' }}>
+                <p className="text-sm text-[#4A4640]" style={{ lineHeight: '1.65' }}>
                   Call us at{' '}
                   <a
                     href={`tel:${SITE.phoneTel}`}
-                    className="text-[#3E6EDC] hover:underline"
+                    className="text-[#8A6D3B] hover:underline"
                     style={{ fontWeight: 700 }}
                   >
                     {SITE.phoneDisplay}
@@ -232,7 +232,7 @@ export function Contact() {
                   — or email{' '}
                   <a
                     href={`mailto:${SITE.email}`}
-                    className="text-[#3E6EDC] hover:underline"
+                    className="text-[#8A6D3B] hover:underline"
                     style={{ fontWeight: 600 }}
                   >
                     {SITE.email}
@@ -245,26 +245,26 @@ export function Contact() {
             {/* Quote Form */}
             <div className="lg:col-span-3">
               <div
-                className="bg-white rounded-2xl p-8 lg:p-10 border border-[#E5E7EB]"
+                className="bg-white rounded-2xl p-8 lg:p-10 border border-[#E8E1D3]"
                 style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.06)' }}
               >
                 {submitted ? (
                   <div className="text-center py-12">
                     <div
                       className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5"
-                      style={{ backgroundColor: '#EEF1F7', color: '#4C9961' }}
+                      style={{ backgroundColor: '#F2ECDF', color: '#4C9961' }}
                     >
                       <CheckCircle2 size={30} />
                     </div>
-                    <h3 className="text-[#143177] mb-3" style={{ fontSize: '22px', fontWeight: 800 }}>
+                    <h3 className="text-[#1E2126] mb-3" style={{ fontSize: '22px', fontWeight: 800 }}>
                       Quote Request Sent!
                     </h3>
-                    <p className="text-[#374151] text-sm" style={{ lineHeight: '1.7' }}>
+                    <p className="text-[#4A4640] text-sm" style={{ lineHeight: '1.7' }}>
                       Thank you — we've received your request and will be in touch shortly. For urgent
                       inquiries, call{' '}
                       <a
                         href={`tel:${SITE.phoneTel}`}
-                        className="text-[#3E6EDC] hover:underline"
+                        className="text-[#8A6D3B] hover:underline"
                         style={{ fontWeight: 700 }}
                       >
                         {SITE.phoneDisplay}
@@ -273,13 +273,13 @@ export function Contact() {
                   </div>
                 ) : (
                   <>
-                    <h2 className="text-[#143177] mb-2" style={{ fontSize: '22px', fontWeight: 800 }}>
+                    <h2 className="text-[#1E2126] mb-2" style={{ fontSize: '22px', fontWeight: 800 }}>
                       Request Your Free Quote
                     </h2>
-                    <p className="text-[#6B7280] text-sm mb-2">
+                    <p className="text-[#6B6458] text-sm mb-2">
                       Takes about two minutes — we'll reply with a tailored proposal.
                     </p>
-                    <p className="text-xs text-[#9CA3AF] mb-8">Fields marked * are required.</p>
+                    <p className="text-xs text-[#A69C8C] mb-8">Fields marked * are required.</p>
 
                     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                       {/* Honeypot (hidden from humans, catches bots) */}
@@ -389,8 +389,8 @@ export function Contact() {
                       </div>
 
                       {/* Property details — adapts to residential vs commercial */}
-                      <div className="border-t border-[#E5E7EB] pt-5">
-                        <p className="text-xs text-[#143177] mb-4" style={{ fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                      <div className="border-t border-[#E8E1D3] pt-5">
+                        <p className="text-xs text-[#1E2126] mb-4" style={{ fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                           {isCommercial ? 'Property Details' : 'Home Details'}
                         </p>
 
@@ -577,12 +577,12 @@ export function Contact() {
                       <button
                         type="submit"
                         disabled={loading}
-                        style={{ backgroundColor: '#3E6EDC', fontWeight: 700, opacity: loading ? 0.7 : 1 }}
+                        style={{ backgroundColor: '#C6A15B', color: '#1E2126', fontWeight: 700, opacity: loading ? 0.7 : 1 }}
                         className="w-full flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg text-white hover:opacity-90 transition-opacity disabled:cursor-not-allowed"
                       >
                         {loading ? 'Sending…' : <><span>Get My Free Quote</span> <ArrowRight size={17} /></>}
                       </button>
-                      <p className="text-xs text-center text-[#9CA3AF] -mt-2">
+                      <p className="text-xs text-center text-[#A69C8C] -mt-2">
                         No obligation · Fast response · Your info is never shared
                       </p>
                     </form>

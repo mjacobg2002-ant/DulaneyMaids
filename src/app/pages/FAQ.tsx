@@ -128,10 +128,10 @@ export function FAQ() {
       />
 
       {/* ─── Hero ────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: '#143177' }} className="py-20 lg:py-24">
+      <section style={{ backgroundColor: '#1E2126' }} className="py-20 lg:py-24">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <motion.p
-            className="text-[#F7D156] text-xs mb-3"
+            className="text-[#C6A15B] text-xs mb-3"
             style={{ fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}
             initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -168,12 +168,12 @@ export function FAQ() {
             {faqCategories.map((cat, catIdx) => (
               <motion.div key={cat.category} {...inView(catIdx * 0.05)}>
                 <h2
-                  className="text-[#143177] mb-4"
+                  className="text-[#1E2126] mb-4"
                   style={{ fontSize: '19px', fontWeight: 800 }}
                 >
                   {cat.category}
                 </h2>
-                <div className="flex flex-col divide-y divide-[#E5E7EB] border border-[#E5E7EB] rounded-2xl overflow-hidden">
+                <div className="flex flex-col divide-y divide-[#E8E1D3] border border-[#E8E1D3] rounded-2xl overflow-hidden">
                   {cat.items.map((item, idx) => {
                     const id = `${cat.category}-${idx}`;
                     const isOpen = openItem === id;
@@ -181,9 +181,9 @@ export function FAQ() {
                       <div key={idx} className="bg-white">
                         <button
                           onClick={() => toggleItem(id)}
-                          className="w-full flex items-center justify-between gap-6 px-6 py-4 text-left hover:bg-[#F6F8FC] transition-colors"
+                          className="w-full flex items-center justify-between gap-6 px-6 py-4 text-left hover:bg-[#FAF8F3] transition-colors"
                         >
-                          <span className="text-[#143177] text-sm" style={{ fontWeight: 600 }}>
+                          <span className="text-[#1E2126] text-sm" style={{ fontWeight: 600 }}>
                             {item.q}
                           </span>
                           <motion.span
@@ -191,7 +191,7 @@ export function FAQ() {
                             transition={{ duration: 0.25, ease: EASE }}
                             className="flex-shrink-0"
                           >
-                            <ChevronDown size={16} className="text-[#3E6EDC]" />
+                            <ChevronDown size={16} className="text-[#8A6D3B]" />
                           </motion.span>
                         </button>
                         <AnimatePresence initial={false}>
@@ -204,8 +204,8 @@ export function FAQ() {
                               transition={{ duration: 0.28, ease: EASE }}
                               style={{ overflow: 'hidden' }}
                             >
-                              <div className="px-6 pb-5 bg-[#F6F8FC]">
-                                <p className="text-sm text-[#374151]" style={{ lineHeight: '1.75' }}>
+                              <div className="px-6 pb-5 bg-[#FAF8F3]">
+                                <p className="text-sm text-[#4A4640]" style={{ lineHeight: '1.75' }}>
                                   {item.a}
                                 </p>
                               </div>
@@ -221,12 +221,12 @@ export function FAQ() {
           </div>
 
           <motion.div className="mt-14 text-center" {...inView()}>
-            <p className="text-[#374151] mb-4" style={{ fontSize: '16px', lineHeight: '1.7' }}>
+            <p className="text-[#4A4640] mb-4" style={{ fontSize: '16px', lineHeight: '1.7' }}>
               Still have questions? We're happy to help.
             </p>
             <Link
               to="/contact"
-              style={{ backgroundColor: '#3E6EDC', fontWeight: 700 }}
+              style={{ backgroundColor: '#C6A15B', color: '#1E2126', fontWeight: 700 }}
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-white hover:opacity-90 transition-opacity"
             >
               Contact Us <ArrowRight size={17} />

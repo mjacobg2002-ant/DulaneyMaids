@@ -2,32 +2,32 @@
 
 :root {
   --font-size: 16px;
-  --background: #F6F8FC;
-  --foreground: #111827;
+  --background: #FAF8F3;
+  --foreground: #1E2126;
   --card: #FFFFFF;
-  --card-foreground: #111827;
+  --card-foreground: #1E2126;
   --popover: #FFFFFF;
-  --popover-foreground: #111827;
-  --primary: #143177;
+  --popover-foreground: #1E2126;
+  --primary: #1E2126;
   --primary-foreground: #FFFFFF;
-  --secondary: #EEF1F7;
-  --secondary-foreground: #143177;
-  --muted: #EEF1F7;
-  --muted-foreground: #6B7280;
+  --secondary: #F2ECDF;
+  --secondary-foreground: #1E2126;
+  --muted: #F2ECDF;
+  --muted-foreground: #6B6458;
   --accent: #4C9961;
   --accent-foreground: #FFFFFF;
   --destructive: #d4183d;
   --destructive-foreground: #ffffff;
-  --border: #E5E7EB;
+  --border: #E8E1D3;
   --input: transparent;
   --input-background: #f3f3f5;
   --switch-background: #cbced4;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #3E6EDC;
-  --brand-yellow: #F7D156;
-  --brand-blue: #3E6EDC;
-  --brand-dark-blue: #143177;
+  --ring: #C6A15B;
+  --brand-yellow: #C6A15B;
+  --brand-blue: #C6A15B;
+  --brand-dark-blue: #1E2126;
   --brand-green: #4C9961;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -35,14 +35,14 @@
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --radius: 0.75rem;
-  --sidebar: #F6F8FC;
-  --sidebar-foreground: #111827;
-  --sidebar-primary: #143177;
+  --sidebar: #FAF8F3;
+  --sidebar-foreground: #1E2126;
+  --sidebar-primary: #1E2126;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #EEF1F7;
-  --sidebar-accent-foreground: #143177;
-  --sidebar-border: #E5E7EB;
-  --sidebar-ring: #3E6EDC;
+  --sidebar-accent: #F2ECDF;
+  --sidebar-accent-foreground: #1E2126;
+  --sidebar-border: #E8E1D3;
+  --sidebar-ring: #C6A15B;
 }
 
 .dark {
@@ -187,8 +187,8 @@
 
 /* ═══════════════════════════════════════════════════════════════
    Dulaney Maids — design refinements
-   (brand palette unchanged: navy #143177 · blue #3E6EDC ·
-    green #4C9961 · yellow #F7D156)
+   (brand palette: charcoal #1E2126 · gold/brass #C6A15B ·
+    deep brass (text) #8A6D3B · sage #4C9961 · ivory canvas #FAF8F3)
    ═══════════════════════════════════════════════════════════════ */
 
 @layer base {
@@ -202,13 +202,13 @@
 
   /* Brand-colored text selection */
   ::selection {
-    background: #F7D156;
-    color: #143177;
+    background: #C6A15B;
+    color: #1E2126;
   }
 
   /* Visible, on-brand keyboard focus */
   :focus-visible {
-    outline: 2px solid #3E6EDC;
+    outline: 2px solid #C6A15B;
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -221,15 +221,15 @@
   }
 }
 
-/* Signature element: the "clean streak" — a hand-swiped brand-yellow
+/* Signature element: the "clean streak" — a hand-swiped brand-gold
    stroke under a key word. Used sparingly (hero + CTA moments). */
 .hl-streak {
   background-image: linear-gradient(
     100deg,
-    rgba(247, 209, 86, 0) 1%,
-    #F7D156 3.5%,
-    #F7D156 96.5%,
-    rgba(247, 209, 86, 0) 99%
+    rgba(198, 161, 91, 0) 1%,
+    #C6A15B 3.5%,
+    #C6A15B 96.5%,
+    rgba(198, 161, 91, 0) 99%
   );
   background-repeat: no-repeat;
   background-size: 100% 0.24em;

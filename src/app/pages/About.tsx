@@ -50,10 +50,10 @@ export function About() {
       />
 
       {/* ─── Hero ────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: '#143177' }} className="py-20 lg:py-24">
+      <section style={{ backgroundColor: '#1E2126' }} className="py-20 lg:py-24">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <motion.p
-            className="text-[#F7D156] text-xs mb-3"
+            className="text-[#C6A15B] text-xs mb-3"
             style={{ fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}
             initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -90,12 +90,12 @@ export function About() {
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <motion.div {...inView()}>
               <h2
-                className="text-[#143177] mb-6"
+                className="text-[#1E2126] mb-6"
                 style={{ fontSize: 'clamp(24px, 3.5vw, 34px)', fontWeight: 800 }}
               >
                 Our Approach to Cleaning
               </h2>
-              <div className="flex flex-col gap-5" style={{ fontSize: '16px', lineHeight: '1.75', color: '#374151' }}>
+              <div className="flex flex-col gap-5" style={{ fontSize: '16px', lineHeight: '1.75', color: '#4A4640' }}>
                 <p>
                   Dulaney Maids provides premium residential and commercial cleaning from our base in Kettering,
                   Maryland — serving Prince George's County, Washington DC, and Northern Virginia. From standard
@@ -116,7 +116,7 @@ export function About() {
               <div className="mt-8">
                 <Link
                   to="/contact"
-                  style={{ backgroundColor: '#3E6EDC', fontWeight: 700 }}
+                  style={{ backgroundColor: '#C6A15B', color: '#1E2126', fontWeight: 700 }}
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-white hover:opacity-90 transition-opacity"
                 >
                   Get a Free Quote <ArrowRight size={17} />
@@ -132,7 +132,7 @@ export function About() {
                 height={500}
                 loading="lazy"
                 decoding="async"
-                style={{ boxShadow: '0 16px 40px rgba(20,49,119,0.12)' }}
+                style={{ boxShadow: '0 16px 40px rgba(30,33,38,0.12)' }}
               />
             </motion.div>
           </div>
@@ -140,16 +140,16 @@ export function About() {
       </section>
 
       {/* ─── Values ───────────────────────────────────────────── */}
-      <section className="py-20 bg-[#F6F8FC]">
+      <section className="py-20 bg-[#FAF8F3]">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <motion.div className="text-center mb-12" {...inView()}>
             <h2
-              className="text-[#143177] mb-4"
+              className="text-[#1E2126] mb-4"
               style={{ fontSize: 'clamp(24px, 3.5vw, 34px)', fontWeight: 800 }}
             >
               Quality &amp; Confidentiality
             </h2>
-            <p className="text-[#374151] max-w-2xl mx-auto" style={{ fontSize: '17px', lineHeight: '1.7' }}>
+            <p className="text-[#4A4640] max-w-2xl mx-auto" style={{ fontSize: '17px', lineHeight: '1.7' }}>
               Two principles shape everything we do — quality in our work and confidentiality in how we
               conduct it.
             </p>
@@ -173,17 +173,17 @@ export function About() {
                 text: 'Privacy matters — especially in homes and professional environments. We take discretion seriously and maintain it without exception.',
               },
             ].map((v) => (
-              <motion.div key={v.title} {...card} className="bg-white rounded-2xl p-8 border border-[#E5E7EB]">
+              <motion.div key={v.title} {...card} className="bg-white rounded-2xl p-8 border border-[#E8E1D3]">
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                  style={{ backgroundColor: '#EEF1F7', color: '#143177' }}
+                  style={{ backgroundColor: '#F2ECDF', color: '#1E2126' }}
                 >
                   {v.icon}
                 </div>
-                <h3 className="text-[#143177] mb-3" style={{ fontSize: '18px', fontWeight: 700 }}>
+                <h3 className="text-[#1E2126] mb-3" style={{ fontSize: '18px', fontWeight: 700 }}>
                   {v.title}
                 </h3>
-                <p className="text-[#374151] text-sm" style={{ lineHeight: '1.7' }}>
+                <p className="text-[#4A4640] text-sm" style={{ lineHeight: '1.7' }}>
                   {v.text}
                 </p>
               </motion.div>
@@ -205,17 +205,17 @@ export function About() {
                 height={500}
                 loading="lazy"
                 decoding="async"
-                style={{ boxShadow: '0 16px 40px rgba(20,49,119,0.12)' }}
+                style={{ boxShadow: '0 16px 40px rgba(30,33,38,0.12)' }}
               />
             </motion.div>
             <motion.div {...inView(0.15)}>
               <h2
-                className="text-[#143177] mb-5"
+                className="text-[#1E2126] mb-5"
                 style={{ fontSize: 'clamp(24px, 3.5vw, 34px)', fontWeight: 800 }}
               >
                 Based in Kettering — Serving the Entire DMV
               </h2>
-              <p className="text-[#374151] mb-6" style={{ fontSize: '16px', lineHeight: '1.75' }}>
+              <p className="text-[#4A4640] mb-6" style={{ fontSize: '16px', lineHeight: '1.75' }}>
                 We are proud to serve clients across Prince George's County, Washington DC, Northern Virginia,
                 and nearby Montgomery County — from individual homeowners to property managers and commercial clients.
               </p>
@@ -228,7 +228,7 @@ export function About() {
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <CheckCircle2 size={17} className="text-[#4C9961] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#374151] text-sm" style={{ lineHeight: '1.6' }}>
+                    <span className="text-[#4A4640] text-sm" style={{ lineHeight: '1.6' }}>
                       {item}
                     </span>
                   </li>
@@ -236,7 +236,7 @@ export function About() {
               </ul>
               <Link
                 to="/service-areas"
-                style={{ fontWeight: 600, color: '#3E6EDC' }}
+                style={{ fontWeight: 600, color: '#8A6D3B' }}
                 className="inline-flex items-center gap-1.5 text-sm hover:opacity-80 transition-opacity"
               >
                 View all service areas <ArrowRight size={15} />

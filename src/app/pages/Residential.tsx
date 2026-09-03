@@ -143,7 +143,7 @@ export function Residential() {
       />
 
       {/* ─── Hero ────────────────────────────────────────────── */}
-      <section className="relative bg-[#143177] overflow-hidden">
+      <section className="relative bg-[#1E2126] overflow-hidden">
         <img
           src={HERO_IMG}
           alt="Sparkling clean residential kitchen after a professional house cleaning"
@@ -154,7 +154,7 @@ export function Residential() {
         />
         <div className="relative max-w-[1200px] mx-auto px-6 lg:px-10 py-20 lg:py-24">
           <motion.p
-            className="text-[#F7D156] text-xs mb-3"
+            className="text-[#C6A15B] text-xs mb-3"
             style={{ fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}
             initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -189,7 +189,7 @@ export function Residential() {
           >
             <Link
               to="/contact"
-              style={{ backgroundColor: '#3E6EDC', fontWeight: 700 }}
+              style={{ backgroundColor: '#C6A15B', color: '#1E2126', fontWeight: 700 }}
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-white hover:opacity-90 transition-opacity"
             >
               Get a Free Quote <ArrowRight size={17} />
@@ -211,12 +211,12 @@ export function Residential() {
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <motion.div className="text-center mb-14" {...inView()}>
             <h2
-              className="text-[#143177] mb-4"
+              className="text-[#1E2126] mb-4"
               style={{ fontSize: 'clamp(26px, 4vw, 38px)', fontWeight: 800 }}
             >
               Our Residential Cleaning Services
             </h2>
-            <p className="text-[#374151] max-w-2xl mx-auto" style={{ fontSize: '17px', lineHeight: '1.7' }}>
+            <p className="text-[#4A4640] max-w-2xl mx-auto" style={{ fontSize: '17px', lineHeight: '1.7' }}>
               Routine upkeep, deep cleans, move cleanings, and post-construction — each service
               adapted to your home and schedule.
             </p>
@@ -230,38 +230,38 @@ export function Residential() {
                 {...inView()}
                 className={`grid lg:grid-cols-2 gap-10 items-center ${i % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''}`}
               >
-                <div className="bg-[#F6F8FC] rounded-2xl p-8 border border-[#E5E7EB]">
+                <div className="bg-[#FAF8F3] rounded-2xl p-8 border border-[#E8E1D3]">
                   <div className="flex items-center justify-between mb-5">
                     <div
                       className="w-12 h-12 rounded-xl flex items-center justify-center"
-                      style={{ backgroundColor: '#EEF1F7', color: '#143177' }}
+                      style={{ backgroundColor: '#F2ECDF', color: '#1E2126' }}
                     >
                       {s.icon}
                     </div>
                     {s.startingAt && (
                       <span
                         className="text-xs px-3 py-1.5 rounded-full"
-                        style={{ backgroundColor: '#F7D156', color: '#143177', fontWeight: 700 }}
+                        style={{ backgroundColor: '#C6A15B', color: '#1E2126', fontWeight: 700 }}
                       >
                         {s.startingAt}
                       </span>
                     )}
                   </div>
-                  <h3 className="text-[#143177] mb-1" style={{ fontSize: '22px', fontWeight: 800 }}>
+                  <h3 className="text-[#1E2126] mb-1" style={{ fontSize: '22px', fontWeight: 800 }}>
                     {s.title}
                   </h3>
-                  <p className="text-[#3E6EDC] text-sm mb-4" style={{ fontWeight: 600 }}>
+                  <p className="text-[#8A6D3B] text-sm mb-4" style={{ fontWeight: 600 }}>
                     {s.headline}
                   </p>
-                  <p className="text-[#374151] mb-4" style={{ fontSize: '15px', lineHeight: '1.7' }}>
+                  <p className="text-[#4A4640] mb-4" style={{ fontSize: '15px', lineHeight: '1.7' }}>
                     {s.desc}
                   </p>
-                  <p className="text-[#6B7280] text-xs mb-6" style={{ fontWeight: 600 }}>
+                  <p className="text-[#6B6458] text-xs mb-6" style={{ fontWeight: 600 }}>
                     Great for: {s.greatFor}
                   </p>
                   <Link
                     to="/contact"
-                    style={{ backgroundColor: '#3E6EDC', fontWeight: 600 }}
+                    style={{ backgroundColor: '#C6A15B', color: '#1E2126', fontWeight: 600 }}
                     className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg text-white text-sm hover:opacity-90 transition-opacity"
                   >
                     Get a Free Quote <ArrowRight size={15} />
@@ -269,7 +269,7 @@ export function Residential() {
                 </div>
                 <div>
                   <p
-                    className="text-xs text-[#6B7280] mb-3"
+                    className="text-xs text-[#6B6458] mb-3"
                     style={{ fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}
                   >
                     What's Included
@@ -278,7 +278,7 @@ export function Residential() {
                     {s.includes.map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <CheckCircle2 size={17} className="text-[#4C9961] mt-0.5 flex-shrink-0" />
-                        <span className="text-[#374151]" style={{ fontSize: '15px', lineHeight: '1.6' }}>
+                        <span className="text-[#4A4640]" style={{ fontSize: '15px', lineHeight: '1.6' }}>
                           {item}
                         </span>
                       </li>
@@ -292,10 +292,10 @@ export function Residential() {
       </section>
 
       {/* ─── Internal Links ────────────────────────────────────── */}
-      <section className="py-16 bg-[#F6F8FC]">
+      <section className="py-16 bg-[#FAF8F3]">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <motion.h2
-            className="text-[#143177] mb-8"
+            className="text-[#1E2126] mb-8"
             style={{ fontSize: '22px', fontWeight: 800 }}
             {...inView()}
           >
@@ -306,15 +306,15 @@ export function Residential() {
               <motion.div key={city.slug} {...card}>
                 <Link
                   to={`/service-areas/${city.slug}`}
-                  className="flex items-center justify-between bg-white rounded-xl px-5 py-3.5 border border-[#E5E7EB] hover:border-[#3E6EDC] transition-colors group"
+                  className="flex items-center justify-between bg-white rounded-xl px-5 py-3.5 border border-[#E8E1D3] hover:border-[#C6A15B] transition-colors group"
                 >
                   <span
-                    className="text-[#374151] text-sm group-hover:text-[#143177] transition-colors"
+                    className="text-[#4A4640] text-sm group-hover:text-[#1E2126] transition-colors"
                     style={{ fontWeight: 500 }}
                   >
                     House Cleaning in {city.name}, {city.state}
                   </span>
-                  <ArrowRight size={14} className="text-[#3E6EDC] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <ArrowRight size={14} className="text-[#8A6D3B] opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </motion.div>
             ))}

@@ -33,7 +33,7 @@ export function ServiceAreas() {
       id: 'dc',
       label: 'Washington, DC',
       tag: 'Full Coverage',
-      tagColor: '#3E6EDC',
+      tagColor: '#C6A15B',
       description:
         'Professional residential and commercial cleaning throughout Washington DC — serving neighborhoods citywide.',
       cities: dc,
@@ -42,7 +42,7 @@ export function ServiceAreas() {
       id: 'northern-va',
       label: 'Northern Virginia',
       tag: 'Full Coverage',
-      tagColor: '#3E6EDC',
+      tagColor: '#C6A15B',
       description:
         'We serve all major Northern Virginia communities — from Arlington and Alexandria to Loudoun County and Prince William County.',
       cities: northernVA,
@@ -51,7 +51,7 @@ export function ServiceAreas() {
       id: 'montgomery',
       label: 'Montgomery County, MD',
       tag: 'Near-DC Coverage',
-      tagColor: '#3E6EDC',
+      tagColor: '#C6A15B',
       description:
         'Serving the Montgomery County communities closest to DC — Bethesda, Silver Spring, Rockville, and surrounding areas.',
       cities: montgomery,
@@ -95,10 +95,10 @@ export function ServiceAreas() {
       />
 
       {/* ─── Hero ────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: '#143177' }} className="py-20 lg:py-24">
+      <section style={{ backgroundColor: '#1E2126' }} className="py-20 lg:py-24">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <motion.p
-            className="text-[#F7D156] text-xs mb-3"
+            className="text-[#C6A15B] text-xs mb-3"
             style={{ fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}
             initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -133,7 +133,7 @@ export function ServiceAreas() {
         <section
           key={region.id}
           id={region.id}
-          className={`py-16 ${idx % 2 === 0 ? 'bg-white' : 'bg-[#F6F8FC]'}`}
+          className={`py-16 ${idx % 2 === 0 ? 'bg-white' : 'bg-[#FAF8F3]'}`}
         >
           <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
             <motion.div
@@ -141,7 +141,7 @@ export function ServiceAreas() {
               {...inView()}
             >
               <h2
-                className="text-[#143177]"
+                className="text-[#1E2126]"
                 style={{ fontSize: 'clamp(22px, 3.5vw, 30px)', fontWeight: 800 }}
               >
                 {region.label}
@@ -154,7 +154,7 @@ export function ServiceAreas() {
               </span>
             </motion.div>
             <motion.p
-              className="text-[#374151] mb-8 max-w-3xl"
+              className="text-[#4A4640] mb-8 max-w-3xl"
               style={{ fontSize: '16px', lineHeight: '1.7' }}
               {...inView(0.08)}
             >
@@ -169,12 +169,12 @@ export function ServiceAreas() {
                 <motion.div key={city.slug} {...card}>
                   <Link
                     to={`/service-areas/${city.slug}`}
-                    className="flex items-center gap-2.5 rounded-xl px-4 py-3 border border-[#E5E7EB] hover:border-[#3E6EDC] hover:shadow-sm transition-all group"
-                    style={{ backgroundColor: idx % 2 === 1 ? 'white' : '#F6F8FC' }}
+                    className="flex items-center gap-2.5 rounded-xl px-4 py-3 border border-[#E8E1D3] hover:border-[#C6A15B] hover:shadow-sm transition-all group"
+                    style={{ backgroundColor: idx % 2 === 1 ? 'white' : '#FAF8F3' }}
                   >
-                    <MapPin size={14} className="text-[#3E6EDC] flex-shrink-0" />
+                    <MapPin size={14} className="text-[#8A6D3B] flex-shrink-0" />
                     <span
-                      className="text-sm text-[#374151] group-hover:text-[#143177] transition-colors"
+                      className="text-sm text-[#4A4640] group-hover:text-[#1E2126] transition-colors"
                       style={{ fontWeight: 500 }}
                     >
                       {city.name}, {city.state}
@@ -191,7 +191,7 @@ export function ServiceAreas() {
       <section className="py-16 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <motion.h2
-            className="text-[#143177] mb-8"
+            className="text-[#1E2126] mb-8"
             style={{ fontSize: '22px', fontWeight: 800 }}
             {...inView()}
           >
@@ -212,14 +212,14 @@ export function ServiceAreas() {
               <motion.div key={label} {...card}>
                 <Link
                   to={to}
-                  className="flex items-start gap-3 bg-[#F6F8FC] rounded-xl px-5 py-4 border border-[#E5E7EB] hover:border-[#3E6EDC] hover:bg-white transition-all group"
+                  className="flex items-start gap-3 bg-[#FAF8F3] rounded-xl px-5 py-4 border border-[#E8E1D3] hover:border-[#C6A15B] hover:bg-white transition-all group"
                 >
-                  <ArrowRight size={16} className="text-[#3E6EDC] mt-0.5 flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                  <ArrowRight size={16} className="text-[#8A6D3B] mt-0.5 flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
                   <div>
-                    <p className="text-[#143177] text-sm" style={{ fontWeight: 700 }}>
+                    <p className="text-[#1E2126] text-sm" style={{ fontWeight: 700 }}>
                       {label}
                     </p>
-                    <p className="text-[#6B7280] text-xs mt-0.5">{desc}</p>
+                    <p className="text-[#6B6458] text-xs mt-0.5">{desc}</p>
                   </div>
                 </Link>
               </motion.div>

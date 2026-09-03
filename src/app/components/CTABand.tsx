@@ -15,7 +15,7 @@ export function CTABand({
   primaryLabel = 'Get a Free Quote',
 }: CTABandProps) {
   return (
-    <section className="relative overflow-hidden py-28" style={{ backgroundColor: '#143177' }}>
+    <section className="relative overflow-hidden py-28" style={{ backgroundColor: '#1E2126' }}>
       {/* Background video */}
       <video
         className="absolute inset-0 w-full h-full object-cover object-center"
@@ -30,14 +30,14 @@ export function CTABand({
       {/* Subtle navy tint so the video stays visible but the text stays legible */}
       <div
         className="absolute inset-0"
-        style={{ backgroundColor: 'rgba(20,49,119,0.5)' }}
+        style={{ backgroundColor: 'rgba(30,33,38,0.5)' }}
       />
       {/* Fade the video in from the page above and out into the footer below */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0) 15%, rgba(20,49,119,0) 78%, #143177 100%)',
+            'linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0) 15%, rgba(30,33,38,0) 78%, #1E2126 100%)',
         }}
       />
 
@@ -57,7 +57,7 @@ export function CTABand({
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
           <Link
             to="/contact"
-            style={{ backgroundColor: '#3E6EDC', fontWeight: 600 }}
+            style={{ backgroundColor: '#C6A15B', color: '#1E2126', fontWeight: 600 }}
             className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg text-white hover:opacity-90 transition-opacity"
           >
             {primaryLabel} <ArrowRight size={16} />
