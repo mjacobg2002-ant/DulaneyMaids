@@ -14,8 +14,7 @@ export function Layout() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
-      {/* Bottom padding on mobile keeps content clear of the sticky CTA bar */}
-      <main className="flex-1 pt-20 pb-14 lg:pb-0">
+      <main className="flex-1 pt-20">
         <Outlet />
       </main>
       <Footer />

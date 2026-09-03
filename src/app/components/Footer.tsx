@@ -18,7 +18,8 @@ export function Footer() {
   const topAreas = cities.filter((c) => FEATURED_CITY_SLUGS.includes(c.slug));
 
   return (
-    <footer style={{ backgroundColor: '#143177' }}>
+    {/* Extra bottom padding on mobile keeps the footer clear of the sticky CTA bar */}
+    <footer className="pb-14 lg:pb-0" style={{ backgroundColor: '#143177' }}>
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
