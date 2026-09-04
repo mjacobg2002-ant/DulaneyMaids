@@ -8,7 +8,7 @@
  *    (also update index.html, public/robots.txt, and public/sitemap.xml).
  */
 export const SITE = {
-  url: 'https://www.dulaneymaids.com',
+  url: 'https://https://www.dulaneyco.net/',
   name: 'Dulaney Maids',
   tagline: 'Residential & Commercial Cleaning',
   phoneDisplay: '(202) 202-1674',
