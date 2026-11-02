@@ -6,6 +6,7 @@ import { YelpBadge } from '../components/YelpBadge';
 import { getCityBySlug, cities, REGION_LABELS } from '../data/cities';
 import { SITE } from '../data/site';
 import { breadcrumbSchema, faqSchema, serviceSchema } from '../data/seo';
+import { cityHeading, cityMeta } from '../data/pageMeta';
 import { NotFound } from './NotFound';
 
 const INTERIOR_IMG = 'https://images.unsplash.com/photo-1613545325278-f24b0cae1224?w=700&h=450&q=70&fit=crop&auto=format';
@@ -27,6 +28,7 @@ export function CityPage() {
   const cityFull = `${city.name}, ${city.state}`;
   const nearby = getNearby(city.slug);
   const path = `/service-areas/${city.slug}`;
+  const meta = cityMeta(city);
 
   const localFaqs = [
     {
@@ -50,8 +52,8 @@ export function CityPage() {
   return (
     <div>
       <Seo
-        title={`House Cleaning & Commercial Cleaning in ${cityFull}`}
-        description={`Professional house cleaning and maid service in ${cityFull}. Deep cleaning, move-in/move-out, recurring and commercial cleaning by Dulaney Maids. Insured, vetted team — get a free quote.`}
+        title={meta.title}
+        description={meta.description}
         path={path}
         jsonLd={[
           breadcrumbSchema([
@@ -89,7 +91,7 @@ export function CityPage() {
             className="text-white mb-5"
             style={{ fontSize: 'clamp(28px, 5vw, 48px)', fontWeight: 800, lineHeight: 1.15 }}
           >
-            House Cleaning & Commercial Cleaning in {cityFull}
+            {cityHeading(city)}
           </h1>
           <p className="text-white/80 max-w-2xl mb-4" style={{ fontSize: '17px', lineHeight: '1.7' }}>
             {city.blurb}
@@ -139,9 +141,9 @@ export function CityPage() {
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   { label: 'Standard House Cleaning', to: '/residential#standard' },
-                  { label: 'Deep Cleaning', to: '/residential#deep' },
-                  { label: 'Move-In / Move-Out', to: '/residential#move' },
-                  { label: 'Post-Construction', to: '/residential#post-construction' },
+                  { label: 'Deep Cleaning', to: '/deep-cleaning' },
+                  { label: 'Move-In / Move-Out', to: '/move-in-move-out-cleaning' },
+                  { label: 'Post-Construction', to: '/post-construction-cleaning' },
                   { label: 'Office Cleaning', to: '/commercial' },
                   { label: 'Janitorial Services', to: '/commercial' },
                 ].map(({ label, to }) => (
@@ -177,6 +179,46 @@ export function CityPage() {
           </div>
         </div>
       </section>
+
+      {/* ─── Local detail (high-opportunity markets only) ────── */}
+      {city.focus && (
+        <section className="py-16 bg-white border-t border-[#E8E1D3]">
+          <div className="max-w-[1200px] mx-auto px-6 lg:px-10 grid lg:grid-cols-[1.4fr_1fr] gap-10">
+            <div>
+              <h2 className="text-[#1E2126] mb-5" style={{ fontSize: 'clamp(22px, 3vw, 30px)', fontWeight: 800 }}>
+                Home Cleaning for {city.name} Homes
+              </h2>
+              <p className="text-[#4A4640]" style={{ fontSize: '16px', lineHeight: '1.75' }}>
+                {city.focus}
+              </p>
+            </div>
+            {city.neighborhoods && (
+              <div className="bg-[#FAF8F3] rounded-2xl p-6 border border-[#E8E1D3]">
+                <h3 className="text-[#1E2126] mb-4" style={{ fontSize: '15px', fontWeight: 700 }}>
+                  Neighborhoods we serve in {city.name}
+                </h3>
+                <ul className="flex flex-wrap gap-2 mb-4">
+                  {city.neighborhoods.map((n) => (
+                    <li
+                      key={n}
+                      className="flex items-center gap-1.5 bg-white rounded-full px-3 py-1.5 border border-[#E8E1D3] text-sm text-[#4A4640]"
+                      style={{ fontWeight: 500 }}
+                    >
+                      <MapPin size={12} className="text-[#8A6D3B]" />
+                      {n}
+                    </li>
+                  ))}
+                </ul>
+                {city.zips && (
+                  <p className="text-sm text-[#4A4640]">
+                    <span style={{ fontWeight: 700 }}>ZIP codes:</span> {city.zips.join(', ')}
+                  </p>
+                )}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* ─── Why Locals Choose Dulaney ───────────────────────── */}
       <section className="py-16 bg-[#FAF8F3]">

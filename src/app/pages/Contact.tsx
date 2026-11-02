@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Mail, Phone, Clock, MapPin, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Seo } from '../components/Seo';
+import { STATIC_META } from '../data/pageMeta';
 import { YelpBadge } from '../components/YelpBadge';
 import { SITE } from '../data/site';
 
@@ -97,8 +98,8 @@ export function Contact() {
   return (
     <div>
       <Seo
-        title="Get a Free Cleaning Quote — Kettering, MD & the DMV | Dulaney Maids"
-        description="Request a free house cleaning or commercial cleaning quote in Kettering, MD and the DMV. Fast response, tailored pricing, no obligation. Call (202) 202-1674 or use our 2-minute form."
+        title={STATIC_META['/contact'].title}
+        description={STATIC_META['/contact'].description}
         path="/contact"
       />
 

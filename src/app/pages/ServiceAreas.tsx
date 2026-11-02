@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import { motion, useReducedMotion } from 'motion/react';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { Seo } from '../components/Seo';
+import { STATIC_META } from '../data/pageMeta';
 import { CTABand } from '../components/CTABand';
 import { getCitiesByRegion } from '../data/cities';
 
@@ -89,8 +90,8 @@ export function ServiceAreas() {
   return (
     <div>
       <Seo
-        title="Service Areas — Cleaning in Kettering, Prince George's County & the DMV"
-        description="Dulaney Maids serves Kettering, Largo, Upper Marlboro, Bowie, and all of Prince George's County, plus Washington DC, Northern Virginia, and Montgomery County. Find cleaning services near you."
+        title={STATIC_META['/service-areas'].title}
+        description={STATIC_META['/service-areas'].description}
         path="/service-areas"
       />
 

@@ -100,6 +100,9 @@ export function Header() {
                 >
                   {[
                     { to: '/residential', label: 'Residential Cleaning' },
+                    { to: '/move-in-move-out-cleaning', label: 'Move-In / Move-Out' },
+                    { to: '/deep-cleaning', label: 'Deep Cleaning' },
+                    { to: '/post-construction-cleaning', label: 'Post-Construction' },
                     { to: '/commercial', label: 'Commercial Cleaning' },
                   ].map(({ to, label }) => (
                     <Link
@@ -169,6 +172,8 @@ export function Header() {
           >
             {[
               { to: '/residential', label: 'Residential Cleaning' },
+              { to: '/move-in-move-out-cleaning', label: 'Move-In / Move-Out' },
+              { to: '/deep-cleaning', label: 'Deep Cleaning' },
               { to: '/commercial', label: 'Commercial Cleaning' },
               { to: '/service-areas', label: 'Service Areas' },
               { to: '/about', label: 'About' },

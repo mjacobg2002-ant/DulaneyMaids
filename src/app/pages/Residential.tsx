@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import { motion, useReducedMotion } from 'motion/react';
 import { CheckCircle2, ArrowRight, Home, Sparkles, MoveRight, HardHat, Phone } from 'lucide-react';
 import { Seo } from '../components/Seo';
+import { STATIC_META } from '../data/pageMeta';
 import { CTABand } from '../components/CTABand';
 import { YelpBadge } from '../components/YelpBadge';
 import { cities } from '../data/cities';
@@ -131,8 +132,8 @@ export function Residential() {
   return (
     <div>
       <Seo
-        title="Residential House Cleaning & Maid Service in Kettering, MD"
-        description="Professional house cleaning in Kettering, MD and Prince George's County: standard, deep cleaning, move-in/move-out, and post-construction. Insured, vetted cleaners. Free tailored quotes."
+        title={STATIC_META['/residential'].title}
+        description={STATIC_META['/residential'].description}
         path="/residential"
         jsonLd={serviceSchema({
           name: 'Residential House Cleaning',

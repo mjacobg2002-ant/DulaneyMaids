@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import { motion, useReducedMotion } from 'motion/react';
 import { ArrowRight, Building2, CalendarCheck, Users, Home, HeartPulse, Leaf, Settings2, Phone } from 'lucide-react';
 import { Seo } from '../components/Seo';
+import { STATIC_META } from '../data/pageMeta';
 import { CTABand } from '../components/CTABand';
 import { YelpBadge } from '../components/YelpBadge';
 import { cities } from '../data/cities';
@@ -99,8 +100,8 @@ export function Commercial() {
   return (
     <div>
       <Seo
-        title="Commercial Cleaning & Janitorial Services | Prince George's County, MD"
-        description="Commercial cleaning and janitorial services for offices, apartment communities, and facilities in Prince George's County, Washington DC, and Northern Virginia. Tailored programs, insured team, free quotes."
+        title={STATIC_META['/commercial'].title}
+        description={STATIC_META['/commercial'].description}
         path="/commercial"
         jsonLd={serviceSchema({
           name: 'Commercial & Janitorial Cleaning',

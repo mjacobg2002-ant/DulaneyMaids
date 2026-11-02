@@ -10,6 +10,8 @@ import { Reviews } from './pages/Reviews';
 import { FAQ } from './pages/FAQ';
 import { Contact } from './pages/Contact';
 import { NotFound } from './pages/NotFound';
+import { ServicePage } from './pages/ServicePage';
+import { servicePages } from './data/servicePages';
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +23,10 @@ export const router = createBrowserRouter([
       { path: 'commercial', Component: Commercial },
       { path: 'service-areas', Component: ServiceAreas },
       { path: 'service-areas/:citySlug', Component: CityPage },
+      ...servicePages.map((service) => ({
+        path: service.slug,
+        element: <ServicePage service={service} />,
+      })),
       { path: 'about', Component: About },
       { path: 'reviews', Component: Reviews },
       { path: 'faq', Component: FAQ },

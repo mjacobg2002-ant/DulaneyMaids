@@ -59,9 +59,9 @@ export function Footer() {
             <ul className="flex flex-col gap-2.5">
               {[
                 { to: '/residential', label: 'Residential Cleaning' },
-                { to: '/residential#deep', label: 'Deep Cleaning' },
-                { to: '/residential#move', label: 'Move-In / Move-Out' },
-                { to: '/residential#post-construction', label: 'Post-Construction' },
+                { to: '/deep-cleaning', label: 'Deep Cleaning' },
+                { to: '/move-in-move-out-cleaning', label: 'Move-In / Move-Out' },
+                { to: '/post-construction-cleaning', label: 'Post-Construction' },
                 { to: '/commercial', label: 'Commercial & Janitorial' },
               ].map(({ to, label }) => (
                 <li key={label}>

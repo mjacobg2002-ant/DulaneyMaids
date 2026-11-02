@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { motion, useReducedMotion, AnimatePresence } from 'motion/react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { Seo } from '../components/Seo';
+import { STATIC_META } from '../data/pageMeta';
 import { CTABand } from '../components/CTABand';
 import { faqSchema } from '../data/seo';
 import { SITE } from '../data/site';
@@ -121,8 +122,8 @@ export function FAQ() {
   return (
     <div>
       <Seo
-        title="FAQ — House Cleaning Questions Answered | Dulaney Maids"
-        description="Answers about quotes, service areas around Kettering MD, supplies, insurance, vetting, scheduling, and our 24-hour re-clean guarantee."
+        title={STATIC_META['/faq'].title}
+        description={STATIC_META['/faq'].description}
         path="/faq"
         jsonLd={faqSchema(allFaqItems)}
       />

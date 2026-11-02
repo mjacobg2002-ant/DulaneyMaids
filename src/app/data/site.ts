@@ -8,7 +8,8 @@
  *    (also update index.html, public/robots.txt, and public/sitemap.xml).
  */
 export const SITE = {
-  url: 'https://https://www.dulaneyco.net/',
+  // Canonical host — no trailing slash (paths are appended). Apex 307s to www.
+  url: 'https://www.dulaneyco.net',
   name: 'Dulaney Maids',
   tagline: 'Residential & Commercial Cleaning',
   phoneDisplay: '(202) 202-1674',

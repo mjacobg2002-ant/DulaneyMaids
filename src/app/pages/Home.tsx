@@ -16,6 +16,7 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import { Seo } from '../components/Seo';
+import { STATIC_META } from '../data/pageMeta';
 import { CTABand } from '../components/CTABand';
 import { YelpBadge } from '../components/YelpBadge';
 import { cities, FEATURED_CITY_SLUGS } from '../data/cities';
@@ -146,8 +147,8 @@ export function Home() {
   return (
     <div>
       <Seo
-        title="House Cleaning Kettering, MD | Maid Service & Deep Cleaning"
-        description="Five-star house cleaning and maid service in Kettering, MD. Deep cleaning, move-in/move-out, recurring and commercial cleaning across Prince George's County and the DMV. Get a free quote today."
+        title={STATIC_META['/'].title}
+        description={STATIC_META['/'].description}
         path="/"
       />
 

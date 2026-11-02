@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'motion/react';
 import { Star, ExternalLink, PenLine, ShieldCheck } from 'lucide-react';
 import { Seo } from '../components/Seo';
+import { STATIC_META } from '../data/pageMeta';
 import { CTABand } from '../components/CTABand';
 import { YELP } from '../data/site';
 import { reviews } from '../data/reviews';
@@ -55,8 +56,8 @@ export function Reviews() {
   return (
     <div>
       <Seo
-        title="Reviews — Dulaney Maids | 5.0-Rated Cleaning in Kettering, MD"
-        description="Read real customer reviews of Dulaney Maids, a 5.0-rated house cleaning and commercial cleaning company in Kettering, MD serving Prince George's County and the DMV."
+        title={STATIC_META['/reviews'].title}
+        description={STATIC_META['/reviews'].description}
         path="/reviews"
       />
 

@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import { motion, useReducedMotion } from 'motion/react';
 import { CheckCircle2, Shield, Sparkles, Lock, ArrowRight } from 'lucide-react';
 import { Seo } from '../components/Seo';
+import { STATIC_META } from '../data/pageMeta';
 import { CTABand } from '../components/CTABand';
 
 const TEAM_IMG = 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=700&h=500&q=70&fit=crop&auto=format';
@@ -44,8 +45,8 @@ export function About() {
   return (
     <div>
       <Seo
-        title="About Dulaney Maids — Cleaning Company in Kettering, MD"
-        description="Dulaney Maids is a residential and commercial cleaning company based in Kettering, MD, serving Prince George's County and the DMV with insured, vetted, detail-driven cleaning."
+        title={STATIC_META['/about'].title}
+        description={STATIC_META['/about'].description}
         path="/about"
       />
 
